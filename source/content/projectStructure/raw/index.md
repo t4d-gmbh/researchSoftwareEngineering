@@ -3,5 +3,7 @@
 ```{toctree}
 :maxdepth: 3
 
-./metadata
+./structure
+./extensiveStructure
+./additionalElements
 ```
