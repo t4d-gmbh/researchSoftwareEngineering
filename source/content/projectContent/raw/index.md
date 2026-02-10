@@ -5,4 +5,6 @@
 
 ./metadata
 ./structure
+./extensiveStructure
+./additionalElements
 ```

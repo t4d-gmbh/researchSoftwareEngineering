@@ -16,5 +16,9 @@ In this section we have a closer look at project structure and how it can help t
 ```
 ```{include} ./raw/structure.md
 ```
+```{include} ./raw/extensiveStructure.md
+```
+```{include} ./raw/additionalElements.md
+```
 
 {% endif %}
