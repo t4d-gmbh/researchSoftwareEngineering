@@ -31,17 +31,17 @@ This introduction covered the fundamental concepts of version control and Git, b
 
 ### Topics We Haven't Covered
 
-**Collaboration workflows**: How to work effectively with others using branches, pull requests, and code review processes.
+[**Collaboration workflows**](https://t4d-gmbh.github.io/using-git-in-academia/content/working-with-git/source/content/principles/index.html): How to work effectively with others using branches, pull requests, and code review processes.
 
-**Handling conflicts**: When multiple people change the same files, Git helps identify conflicts that need manual resolution.
+[**Handling conflicts**](https://t4d-gmbh.github.io/using-git-in-academia/content/working-with-git/source/content/exercise/index.html): When multiple people change the same files, Git helps identify conflicts that need manual resolution.
 
-**Remote services**: GitHub, GitLab, and other platforms provide project management tools, issue tracking, and collaboration features beyond Git itself.
+[**Remote services**](https://t4d-gmbh.github.io/using-git-in-academia/content/git-and-its-remotes/source/content/remote_services/index.html): GitHub, GitLab, and other platforms provide project management tools, issue tracking, and collaboration features beyond Git itself.
 
-**Advanced Git operations**: Rebasing, cherry-picking, bisecting, and other powerful commands for managing complex histories.
+[**Advanced Git operations**](https://t4d-gmbh.github.io/using-git-in-academia/content/working-with-git/source/content/useful_commands/index.html): Rebasing, cherry-picking, bisecting, and other powerful commands for managing complex histories.
 
-**CI/CD automation**: Using automated workflows to test code, build documentation, or ensure reproducibility.
+[**CI/CD automation**](https://t4d-gmbh.github.io/using-git-in-academia/content/ci-cd-workflows/source/content/why_automation/index.html): Using automated workflows to test code, build documentation, or ensure reproducibility.
 
-**Git for scientific reproducibility**: Strategies for versioning data (Git LFS), managing multi-repository projects (submodules), and linking code versions to published results.
+[**Git for scientific reproducibility**](https://t4d-gmbh.github.io/using-git-in-academia/content/git-and-science/source/content/intro/index.html): Strategies for versioning data (Git LFS), managing multi-repository projects (submodules), and linking code versions to published results.
 {% endif %}
 
 {% if slide %}
@@ -101,7 +101,7 @@ The course includes practical exercises with real repositories, providing hands-
 
 1. **Practice**: Use Git for your next analysis or project
 2. **Explore**: Try GitHub or GitLab for remote hosting
-3. **Learn more**: Work through the full course when ready
+3. **Learn more**: Work through/Attend the full course when ready
 
 :::{admonition} Remember
 :class: tip
@@ -121,7 +121,13 @@ When you encounter issues:
 
 ### Practical Advice
 
-Start using Git for your projects now, even if you're working alone. The benefits of version control—history tracking, safe experimentation, and backup—apply to individual projects just as much as collaborative ones. As you become comfortable with basic operations, gradually explore more advanced features.
+Start using Git for your projects now, even if you're working alone. The benefits of version control (history tracking, safe experimentation, and backup) apply to individual projects just as much as collaborative ones. As you become comfortable with basic operations, gradually explore more advanced features.
+
+:::{admonition} Playground Repository
+:class: tip
+Practice in a "Playground Repository" where you can safely test the effects of the different git commands.
+:::
+
 
 The key is consistent use. Like any tool, Git becomes intuitive with regular practice.
 {% endif %}
