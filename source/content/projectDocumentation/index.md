@@ -1,21 +1,34 @@
 # Project Documentation
 
-{% if slides %}
+{% if build == "slides" %}
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 1
 
-./raw/index
+./introduction
+./readme_structure
+./installation_usage
+./data_license
+./extended_docs
 ```
 
 {% else %}
 
-A Project documentation does not need to be extensive.
-Already a minimal, well structured documentation can ...
+Documentation is the bridge between your code and its users (including future you). Even minimal documentation makes a project usable and maintainable. This section establishes the baseline requirements for research software documentation.
 
-```{include} ./raw/theREADME.md
+```{include} ./introduction.md
 ```
-```{include} ./raw/shinx.md
+
+```{include} ./readme_structure.md
+```
+
+```{include} ./installation_usage.md
+```
+
+```{include} ./data_license.md
+```
+
+```{include} ./extended_docs.md
 ```
 
 {% endif %}
