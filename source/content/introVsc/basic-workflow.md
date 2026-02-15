@@ -144,8 +144,9 @@ git merge feature-analysis
 :class: tip
 Write clear commit messages! Future you (and collaborators) will thank you.
 
-**Good**: "Fix temperature unit conversion in processing script"  
-**Bad**: "fixed bug"
+![Git Commit](https://imgs.xkcd.com/comics/git_commit.png)
+
+*Source: [xkcd.com/1296](https://xkcd.com/1296)*
 :::
 {% endif %}
 
