@@ -1,4 +1,4 @@
-# Project metadata
+## Project metadata
 
 Comprehensive metadata is the backbone of any transparent software project. It ensures clarity for new users, facilitates reproducibility for researchers, and fosters effective collaboration.
 While there are many ways to provide this information, certain standards have emerged.

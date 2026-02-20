@@ -1,18 +1,31 @@
 # Project Content
 
-{% if slides %}
+{% if slide %}
 
 ```{toctree}
 :maxdepth: 3
 
-./raw/index
+./definition
+./whatBelongsInAProject
+./goodScientificPractice
+./gSPAdendum
 ```
 
 {% else %}
 
-In this section we have a closer look at project structure and how it can help to facilitate ...
 
+```{include} ./definition.md
+```
+```{include} ./goodScientificPractice.md
+```
+```{include} ./gSPAdendum.md
+```
 ```{include} ./raw/metadata.md
 ```
+```{include} ./raw/structure.md
+```
+```{include} ./raw/extensiveStructure.md
+```
+```{include} ./raw/additionalElements.md
 
 {% endif %}

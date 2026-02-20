@@ -1,5 +1,7 @@
 # Structure for good practices
 
+A well structured project facilitates development for you and your collaborators, but it can also ease the usage of cloud and cluster infrastructures.
+
 ## Research compendium
 
 A **Research Compendium** is more than just a folder of files; it is a comprehensive collection of all digital materials and artifacts associated with a research project.
