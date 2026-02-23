@@ -1,20 +1,25 @@
 # Software Development Strategies
 
-{% if slides %}
-
+{% if slide %}
+<!-- BUILDING THE SLIDES -->
 ```{toctree}
 :maxdepth: 3
 
-./raw/index
+./rubberDucking
+./refactoring
+./unitTesting
 ```
 
 {% else %}
+<!-- BUILDING THE PAGES -->
 
-...
-
-```{include} ./raw/codingStrategies.md
+```{include} ./rubberDucking.md
 ```
-```{include} ./raw/refactoring.md
+
+```{include} ./refactoring.md
+```
+
+```{include} ./unitTesting.md
 ```
 
 {% endif %}
