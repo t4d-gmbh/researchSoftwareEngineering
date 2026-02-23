@@ -25,6 +25,8 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-pyproj" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-reqs" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-git" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-gitlab" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-github" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-env" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-ai" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-license" class="tree-radio">
@@ -32,12 +34,14 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-contrib" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-codeofconduct" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-data" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-data-readme" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-data-raw" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-data-interim" class="tree-radio">
-<input type="radio" name="tree-nav" id="radio-data-results" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-data-final" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-scripts" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-scripts-drafts" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-notebooks" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-notebooks-drafts" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-config" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-src" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-mypkg" class="tree-radio">
@@ -54,8 +58,8 @@ We suggest adopting the following structure for the root folder, commonly referr
       <summary><label for="radio-root">myProject/</label></summary>
       <ul>
         <li>📄 <label for="radio-readme">README.md</label></li>
-        <li>📄 <label for="radio-pyproj">pyproject.toml</label></li>
-        <li>📄 <label for="radio-reqs">requirements.txt</label></li>
+        <li>📄 <label for="radio-pyproj">pyproject.toml <span class="context-badge">🔸</span></label></label></li>
+        <li>📄 <label for="radio-reqs">requirements.txt <span class="context-badge">🔸</span></label></label></li>
         <li>📄 <label for="radio-git">.gitignore</label></li>
         <li>📄 <label for="radio-env">.env</label></li>
         <li>📄 <label for="radio-ai">AI_USAGE.md</label></li>
@@ -63,13 +67,15 @@ We suggest adopting the following structure for the root folder, commonly referr
         <li>📄 <label for="radio-citation">CITATION.cff</label></li>
         <li>📄 <label for="radio-contrib">CONTRIBUTING.md</label></li>
         <li>📄 <label for="radio-codeofconduct">CODE_OF_CONDUCT.md</label></li>
+        <li>📄 <label for="radio-gitlab">.gitlab-ci.yaml<span class="context-badge">🔸</span></label></li>
         <li>
           <details>
             <summary><label for="radio-data">data/</label></summary>
             <ul>
+                <li>📄 <label for="radio-data-readme">README.md</label></li>
                 <li>📂 <label for="radio-data-raw">raw/</label></li>
                 <li>📂 <label for="radio-data-interim">interim/</label></li>
-                <li>📂 <label for="radio-data-results">results/</label></li>
+                <li>📂 <label for="radio-data-final">final/</label></li>
             </ul>
           </details>
         </li>
@@ -78,25 +84,21 @@ We suggest adopting the following structure for the root folder, commonly referr
             <summary><label for="radio-scripts">scripts/</label></summary>
             <ul>
                 <li>📂 <label for="radio-scripts-drafts">drafts/</label></li>
-                <li>📄 run_sims.py</li>
             </ul>
           </details>
         </li>
         <li>
           <details>
             <summary><label for="radio-notebooks">notebooks/</label></summary>
-            <ul><li>📄 01_intro.ipynb</li></ul>
+            <ul>
+                <li>📂 <label for="radio-notebooks-drafts">drafts/</label></li>
+            </ul>
           </details>
         </li>
+        <li>📂 <label for="radio-config">config/</label></li>
         <li>
           <details>
-            <summary><label for="radio-config">config/</label></summary>
-            <ul><li>📄 default.yaml</li></ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary><label for="radio-src">src/</label></summary>
+            <summary><label for="radio-src">src/ <span class="context-badge">🔸</span></label></summary>
             <ul>
                 <li>📂 <label for="radio-mypkg">mypks/</label></li>
             </ul>
@@ -106,20 +108,14 @@ We suggest adopting the following structure for the root folder, commonly referr
         <li>
           <details>
             <summary><label for="radio-tests">tests/</label></summary>
-            <ul><li>📂 unit/</li><li>📂 integration/</li></ul>
+            <ul><li>📂 unit/</li>
+            <li>📂 integration/</li></ul>
           </details>
         </li>
         <li>📂 <label for="radio-examples">examples/</label></li>
-        <li>
-          <details>
-            <summary><label for="radio-docs">docs/</label></summary>
-            <ul>
-              <li>📄 conf.py</li>
-              <li>📄 index.rst</li>
-            </ul>
-          </details>
-        </li>
+        <li>📂 <label for="radio-docs">docs/</label></li>
         <li>📂 <label for="radio-bench">benchmark/</label></li>
+        <li>📂 <label for="radio-github">.github/workflows/ <span class="context-badge">🔸</span></label></li>
       </ul>
     </details>
     
@@ -129,18 +125,27 @@ We suggest adopting the following structure for the root folder, commonly referr
     <div id="desc-root" class="desc-item">
       <h3>🏠 Project Root</h3>
       <p>The root folder of a project should only contain generic files and foldernames.</p>
+      {% if page %}
       <p><i>Select a file or folder to read more about its purpose and content</i></p>
-      <p><i>Click on the 📂 signs to expand a folder.</i></p>
+      <p><i>Click on the 📁 signs to expand a folder.</i></p>
+      <p><i>A 🔸 indicates a specific context in which the element is relevant.</i></p>
+      {% endif %}
     </div>
     <div id="desc-readme" class="desc-item">
       <h3>📖 README.md</h3>
-      <p>The front page of a repository. Provides the project overview, installation instructions, and quickstart examples.</p>
+      <p>The front page of a repository<p>
+      <p>It should serve as nexus for all metadata related to a project</p>
+      {% if page %}
+        <p>Especially for bigger projects this also means that the `README.md` might **not** contain all metadata directly, but links and instructions on how to find all metadata.</p>
+      {% endif %}
     </div>
     <div id="desc-pyproj" class="desc-item">
+      <span class="context-label">🔸 python</span>
       <h3>📦 pyproject.toml</h3>
       <p>The modern standard for defining build systems, dependencies, and tool settings (like ruff, pytest, or black).</p>
     </div>
     <div id="desc-reqs" class="desc-item">
+      <span class="context-label">🔸 python</span>
       <h3>📝 requirements.txt</h3>
       <p>A simple list of pip dependencies. While <code>pyproject.toml</code> is preferred for packages, this file is still highly useful for pinning exact dependency versions in isolated environments.</p>
     </div>
@@ -153,6 +158,16 @@ We suggest adopting the following structure for the root folder, commonly referr
       <p>Local environment variables and secrets (such as API keys, database passwords, and personal access tokens). <b>This file should never be added to version control.</b> It should be strictly ignored by Git to prevent leaking sensitive security credentials.</p>
       <p>We recommend to add the <code>.env</code> file to <code>.gitignore</code> and provide a <code>.env.example</code> file along with a repository so to document how exactly the <code>.env</code> file should be structured.</p>
     </div>
+    <div id="desc-gitlab" class="desc-item">
+      <span class="context-label">🔸 GitLab</span>
+      <h3>⚙️ .gitlab-ci.yaml</h3>
+      <p>...</p>
+    </div>
+    <div id="desc-github" class="desc-item">
+      <span class="context-label">🔸 GitHub</span>
+      <h3>⚙️ .github/workflows</h3>
+      <p>...</p>
+    </div>
     <div id="desc-ai" class="desc-item">
       <h3>🤖 AI_USAGE.md</h3>
       <p>Transparency document detailing how LLMs were used in the creation of code or documentation.</p>
@@ -163,7 +178,21 @@ We suggest adopting the following structure for the root folder, commonly referr
     </div>
     <div id="desc-citation" class="desc-item">
       <h3>📝 CITATION.cff</h3>
-      <p>A plain text file with machine-readable citation information. It ensures that researchers and users know exactly how to credit the work in academic papers and publications.</p>
+      <p>Plain text YAML file specifying how this project should be cited.</p>
+      {% if page %}
+      <p>This should be a plain text file with machine-readable citation information.</p>
+      <p>A minimalistic example of what this file looks like:</p>
+      <pre><code class="language-yaml">
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+authors:
+  - family-names: "Lisa"
+    given-names: "Mona"
+    orcid: "https://orcid.org/xxxx-xxxx-xxxx-xxxx
+title: "My Awesome Research"
+doi: <the-doi>
+      </code></pre>
+      {% endif %}
     </div>
     <div id="desc-contrib" class="desc-item">
       <h3>🤝 CONTRIBUTING.md</h3>
@@ -177,6 +206,10 @@ We suggest adopting the following structure for the root folder, commonly referr
       <h3>📊 Data</h3>
       <p>The root data directory. We use a strict data pipeline separating raw inputs from processed outputs. Expand the folder and select a subfolder on the left to learn more about its specific rules.</p>
     </div>
+    <div id="desc-data-readme" class="desc-item">
+      <h3>📖 README.md</h3>
+      <p>Information specific to the data related to this project.</p>
+    </div>
     <div id="desc-data-raw" class="desc-item">
       <h3>📁 raw/</h3>
       <p>Immutable, original data. <b>Do not edit these files.</b> <i>(Note: This also includes pointers/URL links to large external datasets that cannot be stored directly in Git.)</i></p>
@@ -185,7 +218,7 @@ We suggest adopting the following structure for the root folder, commonly referr
       <h3>📁 interim/</h3>
       <p>Intermediate data that has been cleaned or transformed, but is not yet ready for final analysis.</p>
     </div>
-    <div id="desc-data-results" class="desc-item">
+    <div id="desc-data-final" class="desc-item">
       <h3>📁 results/</h3>
       <p>Final, processed datasets ready for modeling, publication, or deployment.</p>
     </div>
@@ -198,14 +231,21 @@ We suggest adopting the following structure for the root folder, commonly referr
       <p>A scratchpad folder for experimental scripts that are not yet production-ready or integrated into the main workflow.</p>
     </div>
     <div id="desc-notebooks" class="desc-item">
+      <span class="context-label">🔸 Python/R</span>
       <h3>📓 Notebooks</h3>
       <p>Jupyter notebooks for exploratory data analysis (EDA), prototyping, and interactive visualization.</p>
+    </div>
+    <div id="desc-notebooks-drafts" class="desc-item">
+      <span class="context-label">🔸 Python/R</span>
+      <h3>📁 drafts/</h3>
+      <p>A scratchpad folder for experimental notebooks that are not yet production-ready or integrated into the main workflow.</p>
     </div>
     <div id="desc-config" class="desc-item">
       <h3>⚙️ Configuration</h3>
       <p>Centralized YAML/TOML files for parameters. This allows changing experiments without modifying code.</p>
     </div>
     <div id="desc-src" class="desc-item">
+      <span class="context-label">🔸 python</span>
       <h3>💻 Source Code (src/)</h3>
       <p>Location for all reusable and installable code.</p>
     </div>

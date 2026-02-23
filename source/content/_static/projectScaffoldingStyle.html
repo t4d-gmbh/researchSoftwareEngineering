@@ -47,13 +47,17 @@
 #radio-citation:checked ~ .scaffold-split #desc-citation,
 #radio-contrib:checked ~ .scaffold-split #desc-contrib,
 #radio-codeofconduct:checked ~ .scaffold-split #desc-codeofconduct,
+#radio-gitlab:checked ~ .scaffold-split #desc-gitlab,
+#radio-github:checked ~ .scaffold-split #desc-github,
 #radio-data:checked ~ .scaffold-split #desc-data,
 #radio-data-raw:checked ~ .scaffold-split #desc-data-raw,
+#radio-data-readme:checked ~ .scaffold-split #desc-data-readme,
 #radio-data-interim:checked ~ .scaffold-split #desc-data-interim,
-#radio-data-results:checked ~ .scaffold-split #desc-data-results,
+#radio-data-final:checked ~ .scaffold-split #desc-data-final,
 #radio-scripts:checked ~ .scaffold-split #desc-scripts,
 #radio-scripts-drafts:checked ~ .scaffold-split #desc-scripts-drafts,
 #radio-notebooks:checked ~ .scaffold-split #desc-notebooks,
+#radio-notebooks-drafts:checked ~ .scaffold-split #desc-notebooks-drafts,
 #radio-config:checked ~ .scaffold-split #desc-config,
 #radio-src:checked ~ .scaffold-split #desc-src,
 #radio-mypkg:checked ~ .scaffold-split #desc-mypkg,
@@ -76,13 +80,17 @@
 #radio-citation:checked ~ .scaffold-split label[for="radio-citation"],
 #radio-contrib:checked ~ .scaffold-split label[for="radio-contrib"],
 #radio-codeofconduct:checked ~ .scaffold-split label[for="radio-codeofconduct"],
+#radio-gitlab:checked ~ .scaffold-split label[for="radio-gitlab"],
+#radio-github:checked ~ .scaffold-split label[for="radio-github"],
 #radio-data:checked ~ .scaffold-split label[for="radio-data"],
 #radio-data-raw:checked ~ .scaffold-split label[for="radio-data-raw"],
+#radio-data-readme:checked ~ .scaffold-split label[for="radio-data-readme"],
 #radio-data-interim:checked ~ .scaffold-split label[for="radio-data-interim"],
-#radio-data-results:checked ~ .scaffold-split label[for="radio-data-results"],
+#radio-data-final:checked ~ .scaffold-split label[for="radio-data-final"],
 #radio-scripts:checked ~ .scaffold-split label[for="radio-scripts"],
 #radio-scripts-drafts:checked ~ .scaffold-split label[for="radio-scripts-drafts"],
 #radio-notebooks:checked ~ .scaffold-split label[for="radio-notebooks"],
+#radio-notebooks-drafts:checked ~ .scaffold-split label[for="radio-notebooks-drafts"],
 #radio-config:checked ~ .scaffold-split label[for="radio-config"],
 #radio-src:checked ~ .scaffold-split label[for="radio-src"],
 #radio-mypkg:checked ~ .scaffold-split label[for="radio-mypkg"],
@@ -100,6 +108,16 @@
 /* ==========================================
    3. THE PLUS/MINUS FOLDER LOGIC & ALIGNMENT
    ========================================== */
+/* The "Eyebrow" Context Label */
+.context-label {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--pst-color-text-muted); 
+    margin-bottom: -10px; /* Pulls the h3 title closer to the label */
+    display: block;
+}
 .project-tree ul {
     list-style-type: none;
     padding-left: 12px;
@@ -175,5 +193,15 @@
 .project-tree label {
     cursor: pointer;
     margin-bottom: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding-right: 10px;
+}
+.context-badge {
+    opacity: 0.8;
+    margin-left: auto;
+    padding-right: 10px;
 }
 </style>
