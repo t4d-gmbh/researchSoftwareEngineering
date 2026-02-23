@@ -3,11 +3,11 @@
 
 ```{toctree}
 :maxdepth: 1
-:numbered:
 
 ./why-version-control
 ./git-basics
 ./basic-workflow
+./versioning
 ./further-resources
 ```
 
@@ -23,6 +23,9 @@ Version control is a fundamental practice in research software engineering that 
 ```
 
 ```{include} ./basic-workflow.md
+```
+
+```{include} ./versioning.md
 ```
 
 ```{include} ./further-resources.md
