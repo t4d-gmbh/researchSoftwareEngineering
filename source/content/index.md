@@ -3,5 +3,4 @@
 :caption: Research Software Engineering
 
 ./projectContent/index.md
-./projectStructure/index
 ```
