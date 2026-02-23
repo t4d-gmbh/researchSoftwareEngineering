@@ -2,8 +2,6 @@
 :maxdepth: {% if build == "slides" %}1{% else %}4{% endif %}
 :caption: Research Software Engineering
 
-howto/index
-examples/index
 ```
 
 ```{toctree}
