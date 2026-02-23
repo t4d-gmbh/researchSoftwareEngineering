@@ -14,7 +14,8 @@
 
 {% else %}
 
-Documentation is the bridge between your code and its users (including future you). Even minimal documentation makes a project usable and maintainable. This section establishes the baseline requirements for research software documentation.
+Documentation is the bridge between your code and its users (including future you).
+Even minimal documentation makes a project usable and maintainable. This section establishes the baseline requirements for research software documentation.
 
 ```{include} ./introduction.md
 ```
