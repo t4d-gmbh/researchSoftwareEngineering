@@ -41,6 +41,7 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-config" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-src" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-mypkg" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-results" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-tests" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-examples" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-docs" class="tree-radio">
@@ -101,6 +102,7 @@ We suggest adopting the following structure for the root folder, commonly referr
             </ul>
           </details>
         </li>
+        <li>📂 <label for="radio-results">results/</label></li>
         <li>
           <details>
             <summary><label for="radio-tests">tests/</label></summary>
@@ -210,6 +212,10 @@ We suggest adopting the following structure for the root folder, commonly referr
     <div id="desc-mypkg" class="desc-item">
       <h3>📁 mypkg/</h3>
       <p>A particular package containing functions, and business logic.</p>
+    </div>
+    <div id="desc-results" class="desc-item">
+      <h3>📈 results/</h3>
+      <p>A dedicated directory for the final outputs of of a project. If the project involves data analysis, research, or machine learning, this folder holds the generated artifacts such as figures, summary tables, trained models, and compiled reports.</p>
     </div>
     <div id="desc-tests" class="desc-item">
       <h3>🧪 Testing Suite</h3>
