@@ -192,6 +192,7 @@ authors:
 title: "My Awesome Research"
 doi: <the-doi>
       </code></pre>
+      <p>For more details visit the <a href="https://github.com/citation-file-format/citation-file-format/blob/main/README.md">cff-format</a> documentation.</p>
       {% endif %}
     </div>
     <div id="desc-contrib" class="desc-item">
