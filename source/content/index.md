@@ -3,8 +3,6 @@
 :caption: Research Software Engineering
 
 introVsc/index
-howto/index
-examples/index
 ```
 
 ```{toctree}
