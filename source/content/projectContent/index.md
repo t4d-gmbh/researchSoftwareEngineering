@@ -9,6 +9,7 @@
 ./whatBelongsInAProject
 ./goodScientificPractice
 ./gSPAdendum
+./projectScaffolding
 ```
 
 {% else %}
@@ -19,6 +20,8 @@
 ```{include} ./goodScientificPractice.md
 ```
 ```{include} ./gSPAdendum.md
+```
+```{include} ./projectScaffolding.md
 ```
 ```{include} ./raw/metadata.md
 ```
