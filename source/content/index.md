@@ -1,8 +1,14 @@
 ```{toctree}
-:maxdepth: {% if build == "slides" %}1{% else %}4{% endif %}
+:maxdepth: {% if build == "slides" %}1{% else %}2{% endif %}
 :caption: Research Software Engineering
 
+./introVsc/index
 ./projectDocumentation/index
-howto/index
-examples/index
+```
+
+```{toctree}
+:maxdepth: {% if build == "slides" %}1{% else %}2{% endif %}
+:caption: Raw Content
+
+./_raw/index.md
 ```
