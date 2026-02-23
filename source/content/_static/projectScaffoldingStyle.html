@@ -8,14 +8,14 @@
     display: flex;
     border: 1px solid var(--pst-color-border);
     border-radius: 8px;
-    height: 50vh;
+    height: 40vh;
     min-height: 450px;
     margin-bottom: 20px;
     background-color: var(--pst-color-background);
 }
 
 .tree-pane {
-    flex: 0 0 50%; 
+    flex: 0 0 40%; 
     padding: 15px;
     border-right: 1px solid var(--pst-color-border);
     overflow-y: auto;
@@ -41,6 +41,7 @@
 #radio-pyproj:checked ~ .scaffold-split #desc-pyproj,
 #radio-reqs:checked ~ .scaffold-split #desc-reqs,
 #radio-git:checked ~ .scaffold-split #desc-git,
+#radio-env:checked ~ .scaffold-split #desc-env,
 #radio-ai:checked ~ .scaffold-split #desc-ai,
 #radio-license:checked ~ .scaffold-split #desc-license,
 #radio-citation:checked ~ .scaffold-split #desc-citation,
@@ -55,6 +56,7 @@
 #radio-notebooks:checked ~ .scaffold-split #desc-notebooks,
 #radio-config:checked ~ .scaffold-split #desc-config,
 #radio-src:checked ~ .scaffold-split #desc-src,
+#radio-mypkg:checked ~ .scaffold-split #desc-mypkg,
 #radio-tests:checked ~ .scaffold-split #desc-tests,
 #radio-examples:checked ~ .scaffold-split #desc-examples,
 #radio-docs:checked ~ .scaffold-split #desc-docs,
@@ -67,6 +69,7 @@
 #radio-pyproj:checked ~ .scaffold-split label[for="radio-pyproj"],
 #radio-reqs:checked ~ .scaffold-split label[for="radio-reqs"],
 #radio-git:checked ~ .scaffold-split label[for="radio-git"],
+#radio-env:checked ~ .scaffold-split label[for="radio-env"],
 #radio-ai:checked ~ .scaffold-split label[for="radio-ai"],
 #radio-license:checked ~ .scaffold-split label[for="radio-license"],
 #radio-citation:checked ~ .scaffold-split label[for="radio-citation"],
@@ -81,6 +84,7 @@
 #radio-notebooks:checked ~ .scaffold-split label[for="radio-notebooks"],
 #radio-config:checked ~ .scaffold-split label[for="radio-config"],
 #radio-src:checked ~ .scaffold-split label[for="radio-src"],
+#radio-mypkg:checked ~ .scaffold-split label[for="radio-mypkg"],
 #radio-tests:checked ~ .scaffold-split label[for="radio-tests"],
 #radio-examples:checked ~ .scaffold-split label[for="radio-examples"],
 #radio-docs:checked ~ .scaffold-split label[for="radio-docs"],
