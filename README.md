@@ -1,5 +1,7 @@
 # Research Software Engineering
 
+<!-- include-before -->
+
 This is <img src="./source/_static/T4D_logo.svg" alt="T4D" width="25" height="25">'s practical guide to write proper software for scientific (and other) purposes.
 
 ---
