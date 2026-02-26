@@ -50,6 +50,11 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-examples" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-docs" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-bench" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-github-workflows" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-copilot-instructions" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-github-agents" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-claude" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-cursorrules" class="tree-radio">
 
 <div class="scaffold-split">
   <div class="tree-pane project-tree">
@@ -63,6 +68,8 @@ We suggest adopting the following structure for the root folder, commonly referr
         <li>📄 <label for="radio-git">.gitignore</label></li>
         <li>📄 <label for="radio-env">.env</label></li>
         <li>📄 <label for="radio-ai">AI_USAGE.md</label></li>
+        <li>📄 <label for="radio-claude">CLAUDE.md <span class="context-badge">🔸</span></label></li>
+        <li>📄 <label for="radio-cursorrules">.cursorrules <span class="context-badge">🔸</span></label></li>
         <li>📄 <label for="radio-license">LICENCE</label></li>
         <li>📄 <label for="radio-citation">CITATION.cff</label></li>
         <li>📄 <label for="radio-contrib">CONTRIBUTING.md</label></li>
@@ -115,7 +122,16 @@ We suggest adopting the following structure for the root folder, commonly referr
         <li>📂 <label for="radio-examples">examples/</label></li>
         <li>📂 <label for="radio-docs">docs/</label></li>
         <li>📂 <label for="radio-bench">benchmark/</label></li>
-        <li>📂 <label for="radio-github">.github/workflows/ <span class="context-badge">🔸</span></label></li>
+        <li>
+          <details>
+            <summary><label for="radio-github">.github/ <span class="context-badge">🔸</span></label></summary>
+            <ul>
+                <li>📂 <label for="radio-github-workflows">workflows/</label></li>
+                <li>📄 <label for="radio-copilot-instructions">copilot-instructions.md</label></li>
+                <li>📂 <label for="radio-github-agents">agents/</label></li>
+            </ul>
+          </details>
+        </li>
       </ul>
     </details>
     
@@ -161,16 +177,62 @@ We suggest adopting the following structure for the root folder, commonly referr
     <div id="desc-gitlab" class="desc-item">
       <span class="context-label">🔸 GitLab</span>
       <h3>⚙️ .gitlab-ci.yaml</h3>
-      <p>...</p>
+      <p>The CI/CD pipeline definition for GitLab. It declares stages, jobs, and rules that automatically run tests, build artifacts, and deploy your project whenever changes are pushed to the repository.</p>
+      {% if page %}
+      <p>A single YAML file at the repository root controls the entire automation pipeline. Each job specifies a Docker image, a script to execute, and the conditions under which it should run. GitLab Runner picks up these jobs and executes them in isolated containers.</p>
+      {% endif %}
     </div>
     <div id="desc-github" class="desc-item">
       <span class="context-label">🔸 GitHub</span>
-      <h3>⚙️ .github/workflows</h3>
-      <p>...</p>
+      <h3>⚙️ .github/</h3>
+      <p>The hidden configuration directory for GitHub-specific features: CI/CD workflows, AI agent instructions, issue templates, and more.</p>
+      {% if page %}
+      <p>Expand the folder on the left to explore its sub-items. While <code>workflows/</code> for CI/CD is the most common entry, this directory also hosts configuration for coding agents and AI assistants.</p>
+      {% endif %}
+    </div>
+    <div id="desc-github-workflows" class="desc-item">
+      <span class="context-label">🔸 GitHub</span>
+      <h3>⚙️ workflows/</h3>
+      <p>GitHub Actions workflow files (YAML) that define automated CI/CD pipelines. Each file describes a workflow triggered by events such as pushes, pull requests, or scheduled runs to test, build, and deploy your project.</p>
+      {% if page %}
+      <p>Unlike GitLab's single-file approach, GitHub Actions uses one YAML file per workflow inside this directory, making it straightforward to maintain separate pipelines for testing, releasing, and documentation deployment.</p>
+      {% endif %}
+    </div>
+    <div id="desc-copilot-instructions" class="desc-item">
+      <span class="context-label">🔸 GitHub Copilot</span>
+      <h3>🤖 copilot-instructions.md</h3>
+      <p>A Markdown file that provides project-specific context and guidelines to GitHub Copilot. Its contents are automatically included in every Copilot interaction within the repository.</p>
+      {% if page %}
+      <p>Use this file to describe your project's architecture, preferred coding conventions, key libraries, and any domain-specific terminology. Copilot reads it as a system-level prompt, so the instructions apply across chat, inline completions, and code review.</p>
+      {% endif %}
+    </div>
+    <div id="desc-github-agents" class="desc-item">
+      <span class="context-label">🔸 GitHub Copilot</span>
+      <h3>🤖 agents/</h3>
+      <p>Configuration directory for GitHub Copilot coding agents. Each Markdown file in this folder defines a specialized agent with its own system prompt, tool access, and task scope.</p>
+      {% if page %}
+      <p>Coding agents can autonomously work on issues, open pull requests, and run CI checks. The files here let you tailor agent behavior to your project, for example restricting which files an agent may edit or which commands it may run.</p>
+      {% endif %}
     </div>
     <div id="desc-ai" class="desc-item">
       <h3>🤖 AI_USAGE.md</h3>
       <p>Transparency document detailing how LLMs were used in the creation of code or documentation.</p>
+    </div>
+    <div id="desc-claude" class="desc-item">
+      <span class="context-label">🔸 Claude Code</span>
+      <h3>🤖 CLAUDE.md</h3>
+      <p>Project-level instructions for Anthropic's Claude Code agent. When Claude Code opens a repository, it reads this file to understand the project's conventions, build commands, and coding standards.</p>
+      {% if page %}
+      <p>This is the Claude equivalent of <code>copilot-instructions.md</code>. Place it at the repository root. You can specify preferred languages, testing commands, architectural patterns, and any rules Claude should follow when generating or modifying code in your project.</p>
+      {% endif %}
+    </div>
+    <div id="desc-cursorrules" class="desc-item">
+      <span class="context-label">🔸 Cursor</span>
+      <h3>🤖 .cursorrules</h3>
+      <p>A plain-text instruction file for the Cursor AI code editor. Cursor reads this file from the repository root and applies its contents as persistent context for all AI interactions within the project.</p>
+      {% if page %}
+      <p>Use it to describe your stack, style preferences, and domain conventions. The format is free-form text. For more structured setups, Cursor also supports a <code>.cursor/rules/</code> directory where each file targets a specific glob pattern of source files.</p>
+      {% endif %}
     </div>
     <div id="desc-license" class="desc-item">
       <h3>⚖️ LICENSE</h3>
