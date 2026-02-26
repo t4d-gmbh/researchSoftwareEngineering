@@ -3,7 +3,8 @@
 :caption: Research Software Engineering
 
 ./computationalProject/index.md
-introVsc/index
+./introVsc/index
+./projectDocumentation/index
 ```
 
 ```{toctree}
