@@ -1,4 +1,7 @@
-## Installation & Usage
+---
+sd_hide_title: true
+---
+## Installation & Usage & Methodology
 
 {% if page %}
 Clear, reproducible installation steps are the most critical part of your documentation.
@@ -17,6 +20,12 @@ The Golden Rule:
 - Use language-standard packaging systems (`pyproject.toml`)
 - Minimize custom installation steps
 - Document environment setup explicitly
+
+::::::{grid}
+:gutter: 2
+
+:::::{grid-item-card}
+:columns: 12
 
 {% else %}
 
@@ -59,6 +68,10 @@ Combined with a project manager like `uv`, installation reduces to a single, uni
 * The project is installed in editable mode by default
 :::
 ::::
+
+:::::
+:::::{grid-item-card}
+:columns: 6
 
 {% else %}
 
@@ -111,6 +124,9 @@ Provide a minimal, copy-pasteable example:
 uv run python scripts/drafts/hello.py
 
 ```
+:::::
+:::::{grid-item-card}
+:columns: 6
 
 {% else %}
 
@@ -135,6 +151,36 @@ Job completed. Results safely written to /app/results/output_hello.txt
 :::{admonition} Extended Documentation
 To keep the `README.md` concise, advanced scenarios should not be detailed directly here.
 Instead, refer to the extended documentation (e.g., under the `docs/` folder) or provide direct links to advanced scripts.
+:::
+
+{% endif %}
+
+### Methodology
+
+{% if slide %}
+
+**Keep the technical overview high-level:**
+
+- List the core algorithms, mathematical models, or computational workflows.
+- Example: *"Uses a Convolutional Neural Network and Runge-Kutta integration."*
+
+:::{admonition} Details in Docs
+:class: note
+All deep architectural or mathematical explanations belong in the extended documentation.
+:::
+
+:::::
+::::::
+
+{% else %}
+
+The methodology section should provide a high-level overview of the scientific or computational approach taken in your project. Simply list the core algorithms, mathematical models, or computational workflows utilized (for example, *"Uses a Convolutional Neural Network for image feature extraction and Runge-Kutta integration for system dynamics"*).
+
+This allows readers to quickly grasp the technical foundation of your work without getting bogged down in the math or implementation details right on the landing page.
+
+:::{admonition} Keep It High-Level
+:class: important
+Do not include full derivations, extensive mathematical proofs, or deep architectural diagrams in the main `README.md`. Further explanations, complex formulas, and detailed methodological justifications must reside in the extended documentation (e.g., under `docs/methodology.md` or a similar dedicated file).
 :::
 
 {% endif %}

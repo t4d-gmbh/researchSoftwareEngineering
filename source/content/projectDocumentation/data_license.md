@@ -1,84 +1,97 @@
-{% if build == "slides" %}
+---
+sd_hide_title: true
+---
+## Data & Licensing & Citation
+{% if slide %}
+::::::{grid}
+:gutter: 2
 
-## Data & Licensing
-
-{% else %}
-
-## Data Provenance and Licensing
-
+:::::{grid-item-card}
+:columns: 6
 {% endif %}
+
+### Data
 
 {% if slide %}
 
-### Data Section
+**Keep data documentation concise:**
 
-**Document the complete data pipeline:**
+- **Location**: Where does the related data reside?
+- **Access**: How is it accessed (and by whom)?
+- **Ownership & License**: Who owns the data, and under what data-specific license is it provided?
 
-- **Origin**: Where did the data come from?
-- **Processing**: What transformations were applied?
-- **Restrictions**: What are the usage limitations?
+*Note: All further details must be documented in `data/README.md`.*
 
-### License Section
+:::::
+:::::{grid-item-card}
+:columns: 6
 
-**The LICENSE file is your legal contract**
+{% else %}
 
-- Use standard licenses (MIT, GPLv3, Apache 2.0)
-- Don't write your own, rather [choosealicense.com](https://choosealicense.com/)
+The data section in your main documentation should be strictly limited to the essentials: **where the data resides**, **how it can be accessed**, and **who owns it**. 
 
-{% endif %}
+Crucially, if your repository provides data alongside code, you must specify the **Data License**. Software licenses (like MIT) do not properly cover datasets. Specify if the data is covered under a data-specific license like CC-BY-4.0 or ODbL.
 
-{% if page %}
-
-### Documenting Data
-
-
-The data section establishes the provenance of your datasets which is a fundamental requirement for reproducible research. It must declare the origin of the raw data: was it scraped from a website, generated through simulation, or downloaded from a public repository?
+Keeping this section concise ensures users immediately know if they can use the data and where to find it. **Any further details**—such as data provenance, processing pipelines, transformations, or structural descriptions—**must reside in a dedicated `README.md` file under the `data/` directory.**
 
 :::{admonition} Restricted Data Sources
 :class: important
-When raw data cannot be made public (due to privacy concerns, institutional policies, or proprietary restrictions) you still must document:
+When data cannot be made public (due to privacy concerns, institutional policies, or proprietary restrictions), you must clearly state:
 
-- **Access procedure**: How authorized researchers can request access (e.g., institutional data committee, ethics board approval)
-- **Data characteristics**: General description without revealing sensitive details (e.g., "patient records from 2015-2020," "internal company logs")
-- **Reproducibility limitations**: Explicitly state that full reproduction requires data access approval
+- **Ownership**: The institution or entity that officially owns the data.
+- **Access procedure**: How authorized researchers can request access (e.g., via an institutional data committee or ethics board approval).
 
 Transparency about restrictions is better than silence. This allows others to assess whether pursuing access is worthwhile for their research.
 :::
 
-Crucially, you must document the **processing pipeline**. Research data rarely arrives in analysis-ready form. If you handled missing values, removed outliers, normalized features, or performed any other transformations, those decisions must be recorded. This ensures the scientific validity of your project and allows others to assess your methodology.
+{% endif %}
 
-Finally, explicitly state any licensing restrictions regarding the data's redistribution or use. Many datasets come with terms of service that prohibit certain uses or require attribution.
+### License
 
-:::{admonition} Example Data Documentation
-:class: note
-**Origin**: Raw legal text downloaded from [fedlex.admin.ch](https://www.fedlex.admin.ch/) on 2025-11-15 using the public XML API.
+{% if slide %}
 
-**Processing**: Extracted article text using wildcard namespace matching, filtered out authorial notes, split documents into individual articles. Processing script: `scripts/preprocess.py`.
+**The LICENSE file is your legal contract**
 
-**Restrictions**: Content is public domain (Swiss government works), but third-party annotations may have separate terms.
-:::
+- A simple link to the `LICENSE` file is usually enough.
+- **Crucial**: Explicitly list exceptions if parts of the repo use different licenses!
+- **Citation**: Provide a way for others to credit your work (e.g., BibTeX).
 
-### The LICENSE File
+:::::
+:::::{grid-item-card}
+
+{% else %}
 
 Without a license, default copyright laws apply—usually "all rights reserved," meaning no one can legally use your code. A proper `LICENSE` file acts as the legal contract between you and your users.
 
-A standard license file includes:
+In most cases, **a simple reference and link to the `LICENSE` file in the root of your repository is enough.** You do not need to duplicate the license text or its standard conditions in your main documentation.
 
-**License Type**: The specific open-source license used (e.g., MIT, GPLv3, Apache 2.0).
-
-**Copyright Notice**: The year and the name of the copyright holder.
-
-**Permissions**: Rights granted to the user (e.g., commercial use, modification, distribution).
-
-**Conditions**: Obligations the user must fulfill (e.g., including the original license, disclosing source code).
-
-**Limitations**: Disclaimers of warranty and liability—essential for protecting the author.
-
-:::{admonition} Don't Reinvent the Wheel
-:class: warning
-Avoid writing your own license. Use standard templates from [choosealicense.com](https://choosealicense.com/) and copy the full text into a `LICENSE` file. Custom licenses create legal uncertainty and discourage reuse.
+:::{admonition} Mixed Licensing
+:class: important
+If parts of the repository are differently licensed (for example, the core code is MIT, but you include third-party scripts under GPLv3, or your documentation is CC-BY), **this information must be explicitly stated here!** Provide a clear breakdown of which licenses apply to which directories or specific files.
 :::
+{% endif %}
 
-In your `README.md`, link to the `LICENSE` file rather than duplicating its content. This follows the SSOT principle and keeps your documentation maintainable.
+### Citation
+
+Provide a citation format directly in the README or link to a `CITATION.cff` file in your repository.
+
+{% if slide %}
+
+:::::
+::::::
+
+{% else %}
+
+If you are using this repository for academic or published research, make it easy for others to credit your work:
+
+**Example:**
+```bibtex
+@software{your_project_2026,
+  author = {Your Name},
+  title = {Your Project Name},
+  year = {2026},
+  publisher = {GitHub},
+  url = {[https://github.com/your-username/your-repo](https://github.com/your-username/your-repo)}
+}
 
 {% endif %}
