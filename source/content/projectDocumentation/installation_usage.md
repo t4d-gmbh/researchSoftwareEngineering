@@ -1,91 +1,140 @@
-{% if build == "slides" %}
-
 ## Installation & Usage
 
-{% else %}
-
-## Installation Instructions and Usage Examples
-
+{% if page %}
+Clear, reproducible installation steps are the most critical part of your documentation.
 {% endif %}
 
-Clear, reproducible installation steps are the most critical part of your documentation.
+{.centered}
+The Golden Rule:
+
+{.centered}
+{.bigger}
+**Use Standard Tools**
 
 {% if slide %}
+**Stick to standard, modern tools**
 
-### The Golden Rule
-
-**Stick to standard tools**
-
-- Use language-standard packaging systems
+- Use language-standard packaging systems (`pyproject.toml`)
 - Minimize custom installation steps
 - Document environment setup explicitly
 
-{% endif %}
+{% else %}
 
-{% if page %}
+The more non-standard your installation process, the harder it is for others to use your work.
+Each custom step you add is another potential failure point and another barrier to adoption.
 
-### The Golden Rule: Use Standard Tools
-
-The more non-standard your installation process, the harder it is for others to use your work. Each custom step you add is another potential failure point and another barrier to adoption.
-
-For Python projects, this means adhering to official packaging standards. The `pyproject.toml` file is the [modern standard for Python project configuration](https://peps.python.org/pep-0621/). Combined with Python's built-in `pip` and `venv` tools, installation should reduce to two universal steps.
-
-{% endif %}
-
-{% if build == "slides" %}
-
-### Python Standard Installation
-
-```bash
-# 1. Create and activate environment
-python -m venv .venv
-source .venv/bin/activate
-
-# 2. Install project
-pip install -e .
-```
-
-**Key points:**
-- `.` tells pip to use `pyproject.toml` in current directory
-- `-e` (editable) allows live code changes without reinstall
+For Python projects, this means adhering to official packaging standards.
+The `pyproject.toml` file is the [modern standard for Python project configuration](https://peps.python.org/pep-0621/).
+Combined with a project manager like `uv`, installation reduces to a single, universal command.
 
 {% endif %}
 
-{% if page %}
+### Installation
 
-### Standard Python Installation Pattern
+{% if slide %}
+**Example**: Python-based project using `uv`.
 
-For Python projects following modern packaging standards:
+::::{grid}
+:gutter: 2
 
-1. **Create and activate an isolated environment:**
+:::{grid-item}
+:class: sd-m-auto
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/<owner>/<repo-name>.git
+   cd repo-name
+   ```
+2. Install python version, create environment and install project:
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate
+   uv sync
+   ```
+:::
+:::{grid-item-card} Key points:
+:class: sd-m-auto
+
+* `uv sync` directly uses the Python version declared in the `pyproject.toml`
+* `uv sync` automatically creates an isolated `.venv`
+* It reads `pyproject.toml` to install all dependencies
+* The project is installed in editable mode by default
+:::
+::::
+
+{% else %}
+
+For Python projects following modern packaging standards, we recommend using [`uv`](https://docs.astral.sh/uv/), a fast Python package and project manager written in Rust.
+
+**A. Develop locally (Clone and Sync):**
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/<owner>/<repo-name>.git
+   cd repo-name
+   ```
+2. Install python version, create environment and install project:
+   ```bash
+   uv sync
    ```
 
-2. **Install the project and its dependencies:**
-   ```bash
-   pip install -e .
-   ```
+Running `uv sync` handles everything for you: it installs the required Python version, creates an isolated virtual environment (`.venv`), resolves your dependencies from the `pyproject.toml`, and installs them.
 
-The `.` tells pip to look for the `pyproject.toml` in the current directory. The `-e` (editable) flag is highly recommended for research and development. It installs the package in "symlink mode," meaning changes you make to files in `src/` are immediately reflected without needing to reinstall.
+By default, it installs your package in "editable" (symlink) mode, meaning changes you make to the source code are immediately reflected without needing to reinstall.
+
+**B. Install the package directly from GitHub:**
+If you only want to use the package and its dependencies without modifying the source code, you can install it directly into your active environment from the repository:
+
+1. Setup or activeate your virtual environment using python 3.13:
+   ```
+   uv venv --python 3.13
+   ```
+2. Install the package directly from GitHub:
+   ```
+   uv pip install git+https://github.com/<owner>/<repo-name>.git
+   ```
 
 :::{admonition} Reproducibility Benefit
 :class: tip
-This pattern works identically on Windows, macOS, and Linux. Users don't need to understand your project's internals, they just follow the same two steps regardless of complexity.
+This pattern works identically on Windows, macOS, and Linux.
+Users don't need to understand your project's internals, manually create virtual environments, or worry about pip versions — they just use standard `uv` commands regardless of complexity.
 :::
 
-### Usage Examples
+{% endif %}
 
-After installation instructions, provide concrete usage examples. Start with the simplest case:
+### Usage
 
-```python
-from myproject import analyze_data
+{% if slide %}
+**Example**: Python-based project using `uv`.
 
-results = analyze_data("input.csv")
-print(results.summary())
+Provide a minimal, copy-pasteable example:
+
+```bash
+uv run python scripts/drafts/hello.py
+
 ```
 
-Then show more advanced scenarios. Each example should be runnable, meaning that users should be able to copy-paste and execute them successfully.
+{% else %}
+
+Provide a copy-pasteable use case with expected output:
+
+```bash
+uv run python scripts/drafts/hello.py
+
+```
+
+**Expected Output:**
+
+```text
+Job completed. Results safely written to /app/results/output_hello.txt
+
+```
+
+`uv run` automatically detects the `.venv` and safely executes your code without requiring you to manually activate the environment.
+
+*(Alternatively, you can manually activate the environment using `source .venv/bin/activate`, and simply run `python scripts/drafts/hello.py`)*.
+
+:::{admonition} Extended Documentation
+To keep the `README.md` concise, advanced scenarios should not be detailed directly here.
+Instead, refer to the extended documentation (e.g., under the `docs/` folder) or provide direct links to advanced scripts.
+:::
 
 {% endif %}

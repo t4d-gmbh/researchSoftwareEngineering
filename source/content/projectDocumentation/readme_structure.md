@@ -63,7 +63,10 @@ While no "perfect" README exists, consensus among developers (and training data 
 - Easier to maintain
 - Can be automated with templates
 
-**Example**: [cookiecutter](https://cookiecutter.readthedocs.io/) templates
+:::{card} Example:
+- [**cookiecutter.io**](https://cookiecutter.readthedocs.io/) templates
+- [**T4D's Python Project Template**](https://github.com/j-i-l/pythonProject)
+:::
 
 {% endif %}
 
