@@ -5,6 +5,7 @@
 ./computationalProject/index.md
 ./introVsc/index
 ./projectDocumentation/index
+./includingData/index
 ```
 
 ```{toctree}
