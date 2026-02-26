@@ -28,4 +28,10 @@ License, `.gitignore`, dependency files are always there.
 
 {% endif %}
 
-[Link to T4D's Python Project Template](https://github.com/j-i-l/pythonProject)
+:::{admonition} Templates
+:class: tip
+A good starting point for finding project templates for various purposes is [**cookiecutter.io**](https://www.cookiecutter.io/).
+
+A project template following closely the structure presented is available on GitHub: 
+[**T4D's Python Project Template**](https://github.com/j-i-l/pythonProject).
+:::

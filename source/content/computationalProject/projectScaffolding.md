@@ -28,6 +28,7 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-gitlab" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-github" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-env" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-env-example" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-ai" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-license" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-citation" class="tree-radio">
@@ -47,14 +48,13 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-mypkg" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-results" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-tests" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-tests-unit" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-tests-integration" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-tests-file" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-examples" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-docs" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-bench" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-github-workflows" class="tree-radio">
-<input type="radio" name="tree-nav" id="radio-copilot-instructions" class="tree-radio">
-<input type="radio" name="tree-nav" id="radio-github-agents" class="tree-radio">
-<input type="radio" name="tree-nav" id="radio-claude" class="tree-radio">
-<input type="radio" name="tree-nav" id="radio-cursorrules" class="tree-radio">
 
 <div class="scaffold-split">
   <div class="tree-pane project-tree">
@@ -63,13 +63,11 @@ We suggest adopting the following structure for the root folder, commonly referr
       <summary><label for="radio-root">myProject/</label></summary>
       <ul>
         <li>📄 <label for="radio-readme">README.md</label></li>
-        <li>📄 <label for="radio-pyproj">pyproject.toml <span class="context-badge">🔸</span></label></label></li>
-        <li>📄 <label for="radio-reqs">requirements.txt <span class="context-badge">🔸</span></label></label></li>
+        <li>📄 <label for="radio-pyproj">pyproject.toml <span class="context-badge">🔸</span></label></li>
         <li>📄 <label for="radio-git">.gitignore</label></li>
         <li>📄 <label for="radio-env">.env</label></li>
+        <li>📄 <label for="radio-env-example">.env.example</label></li>
         <li>📄 <label for="radio-ai">AI_USAGE.md</label></li>
-        <li>📄 <label for="radio-claude">CLAUDE.md <span class="context-badge">🔸</span></label></li>
-        <li>📄 <label for="radio-cursorrules">.cursorrules <span class="context-badge">🔸</span></label></li>
         <li>📄 <label for="radio-license">LICENCE</label></li>
         <li>📄 <label for="radio-citation">CITATION.cff</label></li>
         <li>📄 <label for="radio-contrib">CONTRIBUTING.md</label></li>
@@ -115,8 +113,11 @@ We suggest adopting the following structure for the root folder, commonly referr
         <li>
           <details>
             <summary><label for="radio-tests">tests/</label></summary>
-            <ul><li>📂 unit/</li>
-            <li>📂 integration/</li></ul>
+            <ul>
+                <li>📂 <label for="radio-tests-unit">unit/</label></li>
+                <li>📂 <label for="radio-tests-integration">integration/</label></li>
+                <li>📄 <label for="radio-tests-file">test_mypkg.py</label></li>
+            </ul>
           </details>
         </li>
         <li>📂 <label for="radio-examples">examples/</label></li>
@@ -127,8 +128,6 @@ We suggest adopting the following structure for the root folder, commonly referr
             <summary><label for="radio-github">.github/ <span class="context-badge">🔸</span></label></summary>
             <ul>
                 <li>📂 <label for="radio-github-workflows">workflows/</label></li>
-                <li>📄 <label for="radio-copilot-instructions">copilot-instructions.md</label></li>
-                <li>📂 <label for="radio-github-agents">agents/</label></li>
             </ul>
           </details>
         </li>
@@ -140,7 +139,7 @@ We suggest adopting the following structure for the root folder, commonly referr
   <div class="desc-pane">
     <div id="desc-root" class="desc-item">
       <h3>🏠 Project Root</h3>
-      <p>The root folder of a project should only contain generic files and foldernames.</p>
+      <p>The root folder of a project should <b>only contain generic files and foldernames</b>.</p>
       {% if page %}
       <p><i>Select a file or folder to read more about its purpose and content</i></p>
       <p><i>Click on the 📁 signs to expand a folder.</i></p>
@@ -149,8 +148,7 @@ We suggest adopting the following structure for the root folder, commonly referr
     </div>
     <div id="desc-readme" class="desc-item">
       <h3>📖 README.md</h3>
-      <p>The front page of a repository<p>
-      <p>It should serve as nexus for all metadata related to a project</p>
+      <p>The front page of a repository.<br>It should serve as <b>nexus for all metadata related to a project</b>.</p>
       {% if page %}
         <p>Especially for bigger projects this also means that the `README.md` might **not** contain all metadata directly, but links and instructions on how to find all metadata.</p>
       {% endif %}
@@ -160,10 +158,20 @@ We suggest adopting the following structure for the root folder, commonly referr
       <h3>📦 pyproject.toml</h3>
       <p>The modern standard for defining build systems, dependencies, and tool settings (like <code>ruff</code>, <code>pytest</code>, or <code>black</code>).</p>
     </div>
-    <div id="desc-reqs" class="desc-item">
-      <span class="context-label">🔸 python</span>
-      <h3>📝 requirements.txt</h3>
-      <p>A simple list of <code>pip</code> dependencies. While <code>pyproject.toml</code> is preferred for packages, this file is still highly useful for pinning exact dependency versions in isolated environments.</p>
+    <div id="desc-env-example" class="desc-item">
+      <h3>📄 .env.example</h3>
+      <p>A safe template for the <code>.env</code> file. Unlike the actual <code>.env</code> file, this template <b>must</b> be committed to version control.</p>
+      {% if page %}
+      <p>It provides empty or safe default values to demonstrate exactly which environment variables a collaborator needs to define on their own system to execute the project successfully.</p>
+      <p>A minimal example of its contents:</p>
+      <pre><code class="language-bash">
+# Define the absolute path to the local data directory
+RAW_DATA_DIR=/absolute/path/to/local/data/
+
+# Provide the API key for external service access
+EXTERNAL_API_KEY=&lt;insert_api_key_here&gt;
+      </code></pre>
+      {% endif %}
     </div>
     <div id="desc-git" class="desc-item">
       <h3>🙈 .gitignore</h3>
@@ -185,10 +193,7 @@ We suggest adopting the following structure for the root folder, commonly referr
     <div id="desc-github" class="desc-item">
       <span class="context-label">🔸 GitHub</span>
       <h3>⚙️ .github/</h3>
-      <p>The hidden configuration directory for GitHub-specific features: CI/CD workflows, AI agent instructions, issue templates, and more.</p>
-      {% if page %}
-      <p>Expand the folder on the left to explore its sub-items. While <code>workflows/</code> for CI/CD is the most common entry, this directory also hosts configuration for coding agents and AI assistants.</p>
-      {% endif %}
+      <p>The hidden configuration directory for GitHub-specific features: CI/CD workflows, issue templates, pull request guidelines, and more.</p>
     </div>
     <div id="desc-github-workflows" class="desc-item">
       <span class="context-label">🔸 GitHub</span>
@@ -198,41 +203,9 @@ We suggest adopting the following structure for the root folder, commonly referr
       <p>Unlike GitLab's single-file approach, GitHub Actions uses one YAML file per workflow inside this directory, making it straightforward to maintain separate pipelines for testing, releasing, and documentation deployment.</p>
       {% endif %}
     </div>
-    <div id="desc-copilot-instructions" class="desc-item">
-      <span class="context-label">🔸 GitHub Copilot</span>
-      <h3>🤖 copilot-instructions.md</h3>
-      <p>A Markdown file that provides project-specific context and guidelines to GitHub Copilot. Its contents are automatically included in every Copilot interaction within the repository.</p>
-      {% if page %}
-      <p>Use this file to describe your project's architecture, preferred coding conventions, key libraries, and any domain-specific terminology. Copilot reads it as a system-level prompt, so the instructions apply across chat, inline completions, and code review.</p>
-      {% endif %}
-    </div>
-    <div id="desc-github-agents" class="desc-item">
-      <span class="context-label">🔸 GitHub Copilot</span>
-      <h3>🤖 agents/</h3>
-      <p>Configuration directory for GitHub Copilot coding agents. Each Markdown file in this folder defines a specialized agent with its own system prompt, tool access, and task scope.</p>
-      {% if page %}
-      <p>Coding agents can autonomously work on issues, open pull requests, and run CI checks. The files here let you tailor agent behavior to your project, for example restricting which files an agent may edit or which commands it may run.</p>
-      {% endif %}
-    </div>
     <div id="desc-ai" class="desc-item">
       <h3>🤖 AI_USAGE.md</h3>
       <p>Transparency document detailing how LLMs were used in the creation of code or documentation.</p>
-    </div>
-    <div id="desc-claude" class="desc-item">
-      <span class="context-label">🔸 Claude Code</span>
-      <h3>🤖 CLAUDE.md</h3>
-      <p>Project-level instructions for Anthropic's Claude Code agent. When Claude Code opens a repository, it reads this file to understand the project's conventions, build commands, and coding standards.</p>
-      {% if page %}
-      <p>This is the Claude equivalent of <code>copilot-instructions.md</code>. Place it at the repository root. You can specify preferred languages, testing commands, architectural patterns, and any rules Claude should follow when generating or modifying code in your project.</p>
-      {% endif %}
-    </div>
-    <div id="desc-cursorrules" class="desc-item">
-      <span class="context-label">🔸 Cursor</span>
-      <h3>🤖 .cursorrules</h3>
-      <p>A plain-text instruction file for the Cursor AI code editor. Cursor reads this file from the repository root and applies its contents as persistent context for all AI interactions within the project.</p>
-      {% if page %}
-      <p>Use it to describe your stack, style preferences, and domain conventions. The format is free-form text. For more structured setups, Cursor also supports a <code>.cursor/rules/</code> directory where each file targets a specific glob pattern of source files.</p>
-      {% endif %}
     </div>
     <div id="desc-license" class="desc-item">
       <h3>⚖️ LICENSE</h3>
@@ -282,7 +255,7 @@ doi: <the-doi>
       <p>Intermediate data that has been cleaned or transformed, but is not yet ready for final analysis.</p>
     </div>
     <div id="desc-data-final" class="desc-item">
-      <h3>📁 results/</h3>
+      <h3>📁 final/</h3>
       <p>Final, processed datasets ready for modeling, publication, or deployment.</p>
     </div>
     <div id="desc-scripts" class="desc-item">
@@ -322,7 +295,20 @@ doi: <the-doi>
     </div>
     <div id="desc-tests" class="desc-item">
       <h3>🧪 Testing Suite</h3>
-      <p>Ensures code reliability via unit tests (individual functions) and integration tests (full workflows).</p>
+      <p>Ensures code reliability via automated testing. A well-structured test suite separates individual component tests from full workflow tests.</p>
+    </div>
+    <div id="desc-tests-unit" class="desc-item">
+      <h3>📁 unit/</h3>
+      <p>Directory for unit tests. These tests are designed to verify that individual functions, classes, or methods operate correctly in strict isolation.</p>
+    </div>
+    <div id="desc-tests-integration" class="desc-item">
+      <h3>📁 integration/</h3>
+      <p>Directory for integration tests. These tests verify that multiple modules, databases, or external services function together properly as a unified system.</p>
+    </div>
+    <div id="desc-tests-file" class="desc-item">
+      <span class="context-label">🔸 python</span>
+      <h3>📄 test_mypkg.py</h3>
+      <p>A standard Python test file (often utilizing <code>pytest</code>). This file contains specific test cases and assertions designed to validate the functionality of the associated <code>mypkg</code> module.</p>
     </div>
     <div id="desc-examples" class="desc-item">
       <h3>💡 Examples</h3>
