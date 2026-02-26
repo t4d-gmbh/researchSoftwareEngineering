@@ -142,12 +142,12 @@ We suggest adopting the following structure for the root folder, commonly referr
     <div id="desc-pyproj" class="desc-item">
       <span class="context-label">🔸 python</span>
       <h3>📦 pyproject.toml</h3>
-      <p>The modern standard for defining build systems, dependencies, and tool settings (like ruff, pytest, or black).</p>
+      <p>The modern standard for defining build systems, dependencies, and tool settings (like <code>ruff</code>, <code>pytest</code>, or <code>black</code>).</p>
     </div>
     <div id="desc-reqs" class="desc-item">
       <span class="context-label">🔸 python</span>
       <h3>📝 requirements.txt</h3>
-      <p>A simple list of pip dependencies. While <code>pyproject.toml</code> is preferred for packages, this file is still highly useful for pinning exact dependency versions in isolated environments.</p>
+      <p>A simple list of <code>pip</code> dependencies. While <code>pyproject.toml</code> is preferred for packages, this file is still highly useful for pinning exact dependency versions in isolated environments.</p>
     </div>
     <div id="desc-git" class="desc-item">
       <h3>🙈 .gitignore</h3>

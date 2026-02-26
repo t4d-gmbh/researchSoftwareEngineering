@@ -5,7 +5,7 @@ A well structured project facilitates development for you and your collaborators
 
 ### Separation of data, method, and output
 
-When organizing scientific projects—especially in data science—one principle stands above the rest:
+When organizing scientific projects (especially in data science) one principle stands above the rest:
 
 <center>
 
@@ -40,7 +40,7 @@ my_data_science_project/
 ├── data/              # Directory for data
 │   ├── raw/           # Original, immutable data dumps (often linked via git-lfs)
 │   ├── interim/       # Intermediary data resulting from filtering, cleaning, etc. 
-│   ├── final/         # Cleaned, tidy data usdef for an analysis
+│   ├── final/         # Cleaned, tidy data used for an analysis
 │   └── synth/         # Aggregated data used for visualizations and reporting
 │
 ├── scripts/           # Directory for Python scripts
@@ -59,7 +59,7 @@ my_data_science_project/
 ├── data/              # Directory for data
 │   ├── raw/           # Original, immutable data dumps
 │   ├── interim/       # Intermediary data resulting from filtering, cleaning, etc. 
-│   ├── final/         # Cleaned, tidy data usdef for an analysis
+│   ├── final/         # Cleaned, tidy data used for an analysis
 │   └── synth/         # Aggregated data used for visualizations and reporting
 │
 ├── scripts/           # Directory for Python scripts
@@ -92,9 +92,9 @@ my_data_science_project/
 │   └── my_project            # The actual Python package directory
 │       ├── __init__.py       # Marks this directory as a Python package
 │       │                     # Submodules below are examples of logical separation:
-│       ├── data.py           # Functions to download or generate data
-│       ├── cleaning.py       # Functions to transform raw data into features
-│       ├── visualization.py  # Functions for generating plots
+│       ├── data.py           #    Functions to download or generate data
+│       ├── cleaning.py       #    Functions to transform raw data into features
+│       ├── visualization.py  #    Functions for generating plots
 │       └── ...
 │
 ├── notebooks/                # Jupyter notebooks for interactive exploration
@@ -125,7 +125,7 @@ my_data_science_project/
 ```
 
 * **Note on redundancy:** `scripts` and `notebooks` often serve similar purposes. If your workflow is entirely notebook-based, you may omit `scripts`, and vice-versa.
-* **Optional folders:** `docs` and `tests` are only necessary if you are compiling formal documentation or running automated tests—though both are highly recommended for robust research.
+* **Optional folders:** `docs` and `tests` are only necessary if you are compiling formal documentation or running automated tests, though both are highly recommended for robust research.
 
 **Additional resources**:
 

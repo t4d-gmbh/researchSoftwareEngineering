@@ -13,7 +13,7 @@ Issues may eventually be encountered regarding:
   Massive repositories can quickly become unwieldy, obscuring the relationship between individual elements, slowing down Git operations, and making the commit history difficult to navigate.
 
 To avoid a bloated monolithic repository while maintaining a unified workflow, multiple smaller, focused repositories can be linked together using `git submodules`.
-This allows a main project to include an external element — such as a raw dataset or a shared utility library — by securely pointing to a specific commit in another Git repository.
+This allows a main project to include an external element (such as a raw dataset or a shared utility library) by securely pointing to a specific commit in another Git repository.
 
 Deciding exactly when to break a project into multiple repositories is ultimately somewhat arbitrary, but a separate repository is generally recommended if:
 
