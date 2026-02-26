@@ -1,5 +1,6 @@
 ## Template Repository
 
+{% if page %}
 Because the root structure and core configuration files of most projects share a highly consistent layout, the creation of a standardized project template is highly recommended.
 Utilizing a template eliminates the repetitive process of manually recreating scaffolding, ensuring that every new endeavor begins with best practices already in place.
 
@@ -8,5 +9,23 @@ This approach drastically reduces initial setup time, prevents structural drift 
 
 A pre-configured template repository is provided below.
 It is designed to serve as a comprehensive, ready-to-use foundation for any Python-based project:
+{% endif %}
+
+{% if slide %}
+Most projects start with the same scaffolding. A **template repository** gives you that baseline out of the box.
+
+:::::{grid} 3
+::::{grid-item-card} <i class="fas fa-clock"></i> Save Time
+No manual setup of folders, configs, or boilerplate.
+::::
+::::{grid-item-card} <i class="fas fa-equals"></i> Stay Consistent
+Every project starts with the same proven layout.
+::::
+::::{grid-item-card} <i class="fas fa-shield-alt"></i> Nothing Forgotten
+License, `.gitignore`, dependency files are always there.
+::::
+:::::
+
+{% endif %}
 
 [Link to T4D's Python Project Template](https://github.com/j-i-l/pythonProject)
