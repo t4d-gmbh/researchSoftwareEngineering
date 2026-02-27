@@ -8,6 +8,7 @@
 ./pythonEnvironment
 ./pyEnvPitfalls
 ./declarationStandards
+./containerEnv
 ```
 
 {% else %}
@@ -19,6 +20,9 @@
 ```
 
 ```{include} ./declarationStandards.md
+```
+
+```{include} ./containerEnv.md
 ```
 
 {% endif %}
