@@ -11,7 +11,6 @@
 ./installation_usage
 ./data_license
 ./contrib_contact
-./extended_docs
 ```
 
 {% else %}
@@ -38,8 +37,11 @@ This section establishes the baseline requirements for research software documen
 ```{include} ./contrib_contact.md
 ```
 
-```{include} ./extended_docs.md
-```
-
 {% endif %}
+
+```{toctree}
+:maxdepth: 1
+
+./extended_docs
+```
 
