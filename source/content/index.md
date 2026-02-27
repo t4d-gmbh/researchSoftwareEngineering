@@ -6,6 +6,7 @@
 ./introVsc/index
 ./projectDocumentation/index
 ./extendedDocumentation/index
+./includingData/index
 ```
 
 ```{toctree}
