@@ -7,6 +7,7 @@
 ./projectDocumentation/index
 ./extendedDocumentation/index
 ./includingData/index
+./declaringEnvironment/index
 ```
 
 ```{toctree}
