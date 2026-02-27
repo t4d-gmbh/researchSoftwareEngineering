@@ -68,7 +68,7 @@ To maintain pipeline integrity and prevent data corruption, this directory is su
 
 {% else %}
 
-The root `README.md` needs to remain short an concise and thus is restricted to stating data location and ownership.
+The root `README.md` needs to remain short and concise and thus is restricted to stating data location and ownership.
 All further explanations and metadata should be placed in `data/README.md`.
 
 This file should contain:

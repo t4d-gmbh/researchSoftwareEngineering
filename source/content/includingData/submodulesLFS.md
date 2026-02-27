@@ -24,7 +24,7 @@ Git is not designed to handle large datasets and binary files.
 Committing large files, such as multi-gigabyte CSVs, increases repository size, slows down operations, and frequently results in errors due to file size limits imposed by hosting providers. 
 
 **[Git Large File Storage](https://git-lfs.com/) (LFS)** in combination with **[Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)** are one way to mitigate this problem.
-When combined, the allow to link versioned data into the primary codebase repository without increasing its footprint.
+When combined, they allow to link versioned data into the primary codebase repository without increasing its footprint.
 
 
 {% endif %}
@@ -105,7 +105,7 @@ git commit -m "Link raw data repository as a submodule"
 
 :::{admonition} Lazy Loading Mechanism
 :class: tip
-When a repository containing a submodule is cloned, the submodule directory (e.g., `data/raw/`) is uninitialized and empty by default.
+When a repository is cloned that contains a submodule, the submodule directory (e.g., `data/raw/`) is uninitialized and empty by default.
 Large datasets are not downloaded automatically.
 
 This mechanism allows local development to proceed using minimal or synthetic data, bypassing unnecessary data transfers.
