@@ -10,29 +10,27 @@ sd_hide_title: true
 **Linking data is a mandatory condition for a projects reproducibility.**
 
 ::::{grid}
-:gutter: 6
+:gutter: 2
 
-:::{grid-item}
+:::{grid-item-card} `data/` Directory
 :columns: 6
-
 {% else %}
 
 While code defines the execution of a computational process, data constitutes the actual entity being processed.
 Data must be linked directly to the project repository to allow for reproducibility and to facilitate the environment setup process.
 
+### `data/` Directory
 {% endif %}
 
-### The Data Directory
-
 {% if slide %}
+Single entry point with strict structural separation:
 
-**Single entry point with strict structural separation:**
 - **`data/raw/`**: Immutable, original data. (Read-only)
 - **`data/interim/`**: Cleaned or transformed intermediate data.
 - **`data/final/`**: Synthesized output data and canonical datasets ready for modeling.
 
 :::
-:::{grid-item}
+:::{grid-item-card} The `data/README.md`
 :columns: 6
 
 {% else %}
@@ -51,13 +49,12 @@ To maintain pipeline integrity and prevent data corruption, this directory is su
   The canonical datasets utilized directly for modeling, reporting, or publication.  
   This folder can be further divided including, e.g., `data/final/results` a directory that contains only synthesized results needed for visualization and reporting.
 
+### The `data/README.md`
 {% endif %}
 
-### A Data README.md
 
 {% if slide %}
-
-**The data documentation location:**
+The data documentation location:
 - A projects `README.md` and `data/README.md` must provide all necessary information regarding used data.
 - Data dictionaries (definitions of columns/variables).
 - Provenance (exact URLs, SQL queries).

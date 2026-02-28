@@ -9,7 +9,7 @@ The `README.md` serves as your project's landing page. Its structure should be p
 - **Project Title & Description**
 - **Methodology** summary
 - **Installation & Usage** (with examples)
-- **Data & Licensing & Citatin** (SSOT principle)
+- **Data & Licensing & Citation** (SSOT principle)
 - **Contributing, Acknowledgments & Contact**
 
 {% else %}

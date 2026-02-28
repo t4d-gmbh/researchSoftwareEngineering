@@ -8,12 +8,19 @@ sd_hide_title: true
 **Data Version Control (DVC)**
 
 {% if slide %}
-
 **Data tracking for machine learning pipelines**
+::::{grid}
+:gutter: 2
+
+:::{grid-item}
 - Designed specifically for dataset and model versioning.
 - Git tracks `.dvc` metadata files.
+:::
+:::{grid-item}
 - DVC manages data transfer to remote storage (e.g., AWS S3, GCS, SSH).
 - Features a storage-agnostic architecture.
+:::
+::::
 
 {% else %}
 
@@ -93,7 +100,7 @@ dvc push
 :::{grid-item-card} 4. Retrieve Data:
 
 ```bash
-git clone [https://github.com/](https://github.com/)<owner>/<repo-name>.git
+git clone https://github.com/<owner>/<repo-name>.git
 dvc pull  # Retrieves exact data versions linked to this commit
 
 ```
@@ -118,7 +125,7 @@ dvc push
 When the Git repository is cloned, only the codebase and the `.dvc` tracking files are initially retrieved. To download the actual datasets linked to a specific Git commit, `dvc pull` must be executed:
 
 ```bash
-git clone [https://github.com/](https://github.com/)<owner>/<repo-name>.git
+git clone https://github.com/<owner>/<repo-name>.git
 cd repo-name
 
 # Retrieves the exact data versions specified by the current Git commit

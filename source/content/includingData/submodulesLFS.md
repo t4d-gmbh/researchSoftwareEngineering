@@ -14,9 +14,9 @@ sd_hide_title: true
 - **Approach**: Combine Git LFS (for the data repository) with Git Submodules (to link data to the code repository).
 
 ::::{grid}
-:gutter: 6
+:gutter: 2
 
-:::{grid-item}
+:::{grid-item-card} Git Large File Storage (LFS)
 
 {% else %}
 
@@ -27,9 +27,9 @@ Committing large files, such as multi-gigabyte CSVs, increases repository size, 
 When combined, they allow to link versioned data into the primary codebase repository without increasing its footprint.
 
 
-{% endif %}
+### Git Large File Storage (LFS)
 
-### Git LFS (Large File Storage)
+{% endif %}
 
 {% if slide %}
 
@@ -44,7 +44,7 @@ git commit -m "Add raw dataset"
 ```
 
 :::
-:::{grid-item}
+:::{grid-item-card} Git Submodules & "Lazy Loading"
 
 {% else %}
 
@@ -66,10 +66,8 @@ git commit -m "Add raw dataset"
 git push origin main
 
 ```
-
-{% endif %}
-
 ### Git Submodules & "Lazy Loading"
+{% endif %}
 
 {% if slide %}
 

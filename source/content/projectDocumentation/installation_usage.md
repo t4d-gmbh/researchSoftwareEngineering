@@ -116,33 +116,61 @@ Users don't need to understand your project's internals, manually create virtual
 ### Usage
 
 {% if slide %}
-**Example**: Python-based project using `uv`.
-
-Provide a minimal, copy-pasteable example:
+Provide a **minimal, copy-pasteable example**:
 
 ```bash
 uv run python scripts/drafts/hello.py
-
 ```
+```python
+import numpy as np
+from mypkgs.math import multiply_matrices
+
+a = np.array([[1,2],[3,4]])
+b = np.array([[4,3],[2,1]])
+multiply_matrices(a,b)
+# Out[5]: array([[8, 5], [20, 13]])
+```
+
 :::::
 :::::{grid-item-card}
 :columns: 6
 
 {% else %}
 
-Provide a copy-pasteable use case with expected output:
+Provide a copy-pasteable use case with expected output.
+
+**Examples**:
+::::{grid} 1 2 2 2
+:gutter: 2
+
+:::{grid-item-card} For a package:
+:class: sd-m-auto
+
+```python
+import numpy as np
+from mypkgs.math import multiply_matrices
+
+a = np.array([[1,2],[3,4]])
+b = np.array([[4,3],[2,1]])
+multiply_matrices(a,b)
+# Out[5]: array([[8, 5], [20, 13]])
+```
+:::
+:::{grid-item-card} For scripts:
+:class: sd-m-auto
 
 ```bash
 uv run python scripts/drafts/hello.py
 
 ```
-
-**Expected Output:**
-
+Expected Output:
 ```text
-Job completed. Results safely written to /app/results/output_hello.txt
+Results exported to /app/results/out.txt
 
 ```
+:::
+::::
+
 
 `uv run` automatically detects the `.venv` and safely executes your code without requiring you to manually activate the environment.
 

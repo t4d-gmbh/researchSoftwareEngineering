@@ -1,13 +1,64 @@
-# Standardized Configuration
+### Standardized Configuration
+
+::::{grid}
+:gutter: 2
+
+:::{grid-item}
+:class: sd-m-auto
 
 {% if slide %}
 
+
 **The `pyproject.toml` Standard**
-- **Build System**: Defines how the package is constructed (PEP 518).
-- **Metadata**: Centralizes versioning, authorship, and licensing (PEP 621).
+- **Build System**: Defines how the package is constructed.
+- **Metadata**: Centralizes versioning, authorship, and licensing.
 - **Dependencies**: Explicitly declares runtime packages and Python versions.
-- **Optional Dependencies**: Isolates execution contexts (e.g., packages needed exclusively for testing).
-- **Tool Configuration**: Centralizes settings for formatters, linters, and testing frameworks.
+- **Optional Dependencies**: Isolates execution contexts (e.g., testing).
+- **Tool Configuration**: Centralizes settings for optional toosl (e.g. linters, testing).
+
+{% else %}
+
+While tools execute the installation, the environment and project specifications must be declaratively defined.
+The modern Python packaging standard dictates the use of a `pyproject.toml` file.
+This file serves as the centralized configuration matrix for the project, replacing legacy files such as `requirements.txt`, `setup.py`, and `setup.cfg`.
+
+{% endif %}
+:::
+:::{grid-item}
+:class: sd-m-auto
+
+```TOML
+# ./pyproject.toml
+[project]
+name = "your_project_name"
+authors = [
+  { name="Your Name", email="your.email@example.com" },
+]
+description = "Brief description of your project"
+readme = "README.md"
+requires-python = "~=3.13.0"
+license.file = "LICENSE"
+dependencies = [ "numpy==2.3.5", ]
+[project.urls]
+Homepage = "https://github.com/j-i-l/pythonProject"
+
+[dependency-groups]
+test = [ "pytest~=7.4.3", ]
+docs = [ "Sphinx==8.1.3", ]
+dev = [{include-group = "test"},
+       {include-group = "docs"},
+       "black>=23.0", ]
+
+[tool.hatch.version]
+source = "vcs"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+```
+:::
+
+{% if slide %}
 
 **Handling System Binaries:**
 - **Conda**: System-level isolation for complex binaries (e.g., CUDA).
@@ -15,9 +66,7 @@
 
 {% else %}
 
-While tools execute the installation, the environment and project specifications must be declaratively defined. The modern Python packaging standard dictates the use of a `pyproject.toml` file. This file serves as the centralized configuration matrix for the project, replacing legacy files such as `requirements.txt`, `setup.py`, and `setup.cfg`.
-
-### Comprehensive Project Configuration
+#### Comprehensive Project Configuration
 
 The `pyproject.toml` structure is divided into specific tables that govern distinct aspects of the software project.
 
@@ -38,40 +87,15 @@ Optional dependencies are utilized to define distinct, compartmentalized executi
 **5. Tool Configuration (`[tool.*]`)**
 The configuration of external developer tools is consolidated within the `pyproject.toml`. Tables such as `[tool.pytest.ini_options]` or `[tool.ruff]` dictate the behavior of test runners, static type checkers, linters, and code formatters, ensuring uniform configurations across all execution environments.
 
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+#### Alternative Ecosystems
 
-[project]
-name = "research-software-project"
-version = "0.1.0"
-description = "Computational project for data analysis."
-readme = "README.md"
-license = {text = "MIT"}
-authors = [{name = "Research Lab", email = "lab@institution.edu"}]
-requires-python = ">=3.11"
-dependencies = [
-    "numpy>=1.24.0",
-    "pandas>=2.0.0",
-]
+Standard Python tooling occasionally fails when projects require complex non-Python dependencies, such as specific C++ compilers, system-level libraries, or GPU drivers.
+In these instances, alternative ecosystems are utilized.
 
-[project.optional-dependencies]
-testing = ["pytest", "pytest-cov"]
-
-[tool.ruff]
-line-length = 88
-
-```
-
-### Alternative Ecosystems: `conda` and `pixi`
-
-Standard Python tooling occasionally fails when projects require complex non-Python dependencies, such as specific C++ compilers, system-level libraries, or GPU drivers. In these instances, alternative ecosystems are utilized.
-
-**Conda**
+**[Conda](https://docs.conda.io/en/latest/)**
 The `conda` package manager isolates environments at the system level rather than strictly at the Python package level. It installs Python itself alongside necessary system binaries. Conda typically relies on an independent configuration format (`environment.yml`).
 
-**Pixi**
+**[Pixi](https://pixi.prefix.dev/latest/)**
 `pixi` is a modern package manager that leverages the Conda ecosystem for binary resolution but integrates directly into the standard Python configuration workflow. It bridges the gap between Python standards and Conda binaries by extending the `pyproject.toml`.
 
 To utilize `pixi`, a dedicated `[tool.pixi]` table is appended to the `pyproject.toml`. This defines Conda-specific channels, dependencies, and system requirements without violating standard Python packaging rules:
@@ -86,5 +110,8 @@ python = "3.11.*"
 cuda-toolkit = "11.8.*"
 
 ```
+
+**Additional resources**:  
+* Structure and format of TOML files [https://en.wikipedia.org/wiki/TOML](https://en.wikipedia.org/wiki/TOML), [https://toml.io/en/latest](https://toml.io/en/latest)
 
 {% endif %}

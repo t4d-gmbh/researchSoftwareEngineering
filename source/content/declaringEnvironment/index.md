@@ -1,31 +1,9 @@
 # Environments
 
-{% if slide %}
-
 ```{toctree}
-:maxdepth: 1
+:maxdepth: {% if build == "slides" %}1{% else %}2{% endif %}
 
-./pythonEnvironment
-./pyEnvPitfalls
-./declarationStandards
-./containerEnv
+./pythonEnv/index
+./virtualized/index
 ```
-
-{% else %}
-
-```{include} ./pythonEnvironment.md
-```
-
-```{include} ./pyEnvPitfalls.md
-```
-
-```{include} ./declarationStandards.md
-```
-
-```{include} ./containerEnv.md
-```
-
-{% endif %}
-
-
 
