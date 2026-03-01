@@ -9,4 +9,5 @@
 ./includingData/index
 ./declaringEnvironment/index
 ./primerSoftwareDevelopment/index
+./developmentStrategies/index
 ```
