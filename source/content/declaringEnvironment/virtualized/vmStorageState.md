@@ -25,7 +25,7 @@ If the attached VM is destroyed, the Cinder volume persists independently. It ca
 
 #### Snapshots and Image Capture
 
-To capture a reproducible state of a virtual machine—including its installed libraries, kernel modifications, and configurations—a snapshot is generated.
+To capture a reproducible state of a virtual machine (including its installed libraries, kernel modifications, and configurations) a snapshot is generated.
 
 In OpenStack, snapshotting a VM creates a new image of the root disk and uploads it to the image registry. This snapshot can then be utilized as a base image to spawn identical clone VMs, facilitating rapid horizontal scaling for distributed computing tasks.
 

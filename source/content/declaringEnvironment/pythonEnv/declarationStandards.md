@@ -74,7 +74,7 @@ The `pyproject.toml` structure is divided into specific tables that govern disti
 This table defines the backend required to package the codebase into installable distributions (wheels and source distributions). Standard backends include `hatchling`, `flit-core`, or `setuptools`.
 
 **2. Project Metadata and Versioning (`[project]`)**
-Core project metadata is strictly formalized under PEP 621. This table standardizes the declaration of the project's name, versioning scheme (which can be static or dynamically derived from Git tags), description, designated entry points, license types, and authorship information. It acts as the primary source of truth for repository information.
+Core project metadata is strictly formalized under [PEP 621](https://peps.python.org/pep-0621/). This table standardizes the declaration of the project's name, versioning scheme (which can be static or dynamically derived from [Git tags](https://t4d-gmbh.github.io/using-git-in-academia/content/working-with-git/source/content/elements/index.html#:~:text=the%20main%20codebase.-,Tags,-A%20%20tag%20is)), description, designated entry points, license types, and authorship information. It acts as the primary source of truth for repository information.
 
 **3. Dependency Declarations**
 Within the `[project]` table, the runtime execution context is defined:
@@ -86,6 +86,12 @@ Optional dependencies are utilized to define distinct, compartmentalized executi
 
 **5. Tool Configuration (`[tool.*]`)**
 The configuration of external developer tools is consolidated within the `pyproject.toml`. Tables such as `[tool.pytest.ini_options]` or `[tool.ruff]` dictate the behavior of test runners, static type checkers, linters, and code formatters, ensuring uniform configurations across all execution environments.
+
+:::{admonition} Interpreter vs. Compilers
+:class: tip
+An *interpreter* is a program that directly executes instructions written in a programming language, line by line, without requiring prior compilation into machine code. In Python's case, the interpreter (e.g., `python3`) reads and runs `.py` files at runtime.
+*Compilers* translate the entire program at once, creating an executable file that runs quickly, whereas interpreters translate and execute code line-by-line, making them slower but easier for debugging.
+:::
 
 #### Alternative Ecosystems
 
@@ -112,6 +118,6 @@ cuda-toolkit = "11.8.*"
 ```
 
 **Additional resources**:  
-* Structure and format of TOML files [https://en.wikipedia.org/wiki/TOML](https://en.wikipedia.org/wiki/TOML), [https://toml.io/en/latest](https://toml.io/en/latest)
+* Structure and format of TOML files [en.wikipedia.org/wiki/TOML](https://en.wikipedia.org/wiki/TOML), [toml.io/en/latest](https://toml.io/en/latest)
 
 {% endif %}

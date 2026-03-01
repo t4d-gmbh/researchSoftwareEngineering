@@ -34,7 +34,7 @@ While hardware virtualization provides ultimate flexibility and isolation, it in
 
 ##### 1. Configuration Drift and "Snowflake" Servers
 
-The most significant threat to VM reproducibility is configuration drift. Because a VM behaves exactly like a physical computer, users frequently SSH into the instance to manually install packages, tweak configuration files, or update dependencies. Over time, the VM becomes a "snowflake"—a unique, fragile environment whose exact state is undocumented and impossible to replicate.
+The most significant threat to VM reproducibility is configuration drift. Because a VM behaves exactly like a physical computer, users frequently SSH into the instance to manually install packages, tweak configuration files, or update dependencies. Over time, the VM becomes a "snowflake": a unique, fragile environment whose exact state is undocumented and impossible to replicate.
 
 *Mitigation*: VMs should be treated as **Immutable Infrastructure**. Manual SSH modifications should be strictly prohibited. Instead, all configuration should be automated using provisioning tools (e.g., Ansible, Puppet, or `cloud-init`). If a change is required, the provisioning script is updated, and a entirely new VM is instantiated to replace the old one.
 
@@ -75,7 +75,7 @@ Virtual Machines require hard reservations of host resources. If a VM is allocat
 
 ##### 2. Hardware Pass-through Complexity
 
-Assigning physical host hardware—such as NVIDIA GPUs or high-speed InfiniBand network interfaces—directly to a virtual machine is structurally complex. It requires technologies like **PCIe Passthrough** or **SR-IOV** (Single Root I/O Virtualization).
+Assigning physical host hardware (such as NVIDIA GPUs or high-speed InfiniBand network interfaces) directly to a virtual machine is structurally complex. It requires technologies like **PCIe Passthrough** or **SR-IOV** (Single Root I/O Virtualization).
 
 The hypervisor must detach the physical PCIe device from the host kernel and map it directly into the guest VM's memory space. This breaks advanced virtualization features; a VM with a passthrough GPU typically cannot be live-migrated to another physical compute node without being completely shut down, thereby limiting high-availability configurations.
 {% endif %}
