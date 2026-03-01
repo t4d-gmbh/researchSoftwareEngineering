@@ -6,40 +6,56 @@ sd_hide_title: true
 ```{compound}
 {.centered}
 {.bigger}
-**Exercise**: Apply the Three Principles
+**Exercise**: Split the Script
 
 {.centered}
-Open `scripts/explore/first_round.py` — mark every violation you find.
+Break `first_round.py` into focused scripts and extract reusable logic into `src/`.
 ```
+
+---
+
+## 🔪 Step 1 — Split into three scripts
 
 ::::{grid} 3
 :gutter: 2
 
-:::{grid-item-card} 🔀 Orthogonality
-Independent concerns tangled together?
-
-*Could you swap the dataset without touching the training loop?*
+:::{grid-item-card} 📥 Data retrieval
+Download / fetch the raw corpus.
 :::
-:::{grid-item-card} 🔁 DRY
-Values or logic repeated across files?
-
-*What breaks if you change `MODEL_ID` in one file but not the other?*
+:::{grid-item-card} 🧹 Preprocessing
+Turn raw data into clean text files (`data/interim/`).
 :::
-:::{grid-item-card} 📌 SST
-Parameters without a single home?
-
-*Where is the canonical definition of `max_length`?*
+:::{grid-item-card} 🏋️ Training
+Load model, tokenize, train, save adapter.
 :::
 ::::
 
-:::{admonition} ~10 min annotation → plenum discussion
-:class: tip
+---
+
+## 🧠 Step 2 — Extract reusable functions into `src/`
+
+Identify logic inside each script that is **general-purpose** and move it to a module:
+
+::::{grid} 2
+:gutter: 2
+
+:::{grid-item-card} 🚀 `scripts/`
+Orchestration only — parse config, call functions, save outputs.
+:::
+:::{grid-item-card} 🧠 `src/apertusor/`
+Reusable building blocks: model loading, tokenization helpers, data utilities.
+:::
+::::
+
+:::{admonition} Keep in mind
+:class: warning margin
+Maintain the separation of concerns from the previous exercise — config, environment, data, and code each stay in their own place.
 :::
 
 ---
 
 ## 💬 Discussion
 
-- Which blocks become their own **function** or **module**?
-- Where should shared parameters live?
-- What is the right granularity?
+- Which pieces of the script are reusable across data retrieval, preprocessing, and training?
+- What stays in `scripts/` vs. what moves to `src/`?
+- Does splitting change how you handle configuration?
