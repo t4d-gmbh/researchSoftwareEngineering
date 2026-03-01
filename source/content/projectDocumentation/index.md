@@ -1,6 +1,6 @@
 # Project Documentation
 
-{% if build == "slides" %}
+{% if slide %}
 
 ```{toctree}
 :maxdepth: 1
@@ -11,6 +11,7 @@
 ./installation_usage
 ./data_license
 ./contrib_contact
+
 ```
 
 {% else %}
@@ -38,10 +39,3 @@ This section establishes the baseline requirements for research software documen
 ```
 
 {% endif %}
-
-```{toctree}
-:maxdepth: 1
-
-./extended_docs
-```
-

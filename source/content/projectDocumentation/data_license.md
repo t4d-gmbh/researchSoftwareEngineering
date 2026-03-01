@@ -20,7 +20,7 @@ sd_hide_title: true
 - **Access**: How is it accessed (and by whom)?
 - **Ownership & License**: Who owns the data, and under what data-specific license is it provided?
 
-*Note: All further details must be documented in `data/README.md`.*
+*Note: All further details should be documented in `data/README.md`.*
 
 :::::
 :::::{grid-item-card}
@@ -54,7 +54,6 @@ Transparency about restrictions is better than silence. This allows others to as
 
 - A simple link to the `LICENSE` file is usually enough.
 - **Crucial**: Explicitly list exceptions if parts of the repo use different licenses!
-- **Citation**: Provide a way for others to credit your work (e.g., BibTeX).
 
 :::::
 :::::{grid-item-card}
