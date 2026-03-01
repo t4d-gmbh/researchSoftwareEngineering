@@ -31,7 +31,7 @@ pip install pytest
 ```
 
 ```python
-# src/hoselupf/calculate.py
+# src/mypkgs/calculate.py
 def calculate_area(length, width):
     """Calculate the area of a rectangle."""
     return length * width
@@ -39,7 +39,7 @@ def calculate_area(length, width):
 
 ```python
 # tests/test_calculate.py
-from hoselupf.calculate import calculate_area
+from mypkgs.calculate import calculate_area
 
 def test_calculate_area():
     assert calculate_area(2, 3) == 6
@@ -64,7 +64,7 @@ python -m pytest
 Here is a minimal example. Given a function in your source code:
 
 ```python
-# src/hoselupf/calculate.py
+# src/mypkgs/calculate.py
 def calculate_area(length, width):
     """Calculate the area of a rectangle."""
     return length * width
@@ -74,7 +74,7 @@ Write a corresponding test:
 
 ```python
 # tests/test_calculate.py
-from hoselupf.calculate import calculate_area
+from mypkgs.calculate import calculate_area
 
 def test_calculate_area():
     assert calculate_area(2, 3) == 6

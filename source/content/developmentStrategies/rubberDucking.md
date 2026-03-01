@@ -15,16 +15,37 @@ Verbalizing your logic forces you to slow down and articulate your reasoning. Wi
 
 {% if slide %}
 
-:::{admonition} Not just for debugging
-:class: tip
+:::::{grid} 1 2 2 2
+:gutter: 2
 
-Works *before* code exists too:
+::::{grid-item}
+:class: sd-m-auto
+
+:::{admonition} Not just for debugging
+:class: note
+
+Works *before* code exists:
 
 1. **Planning**: explain the problem and your intended solution
 2. **Designing**: narrate architectural decisions
-3. **Pseudocode**: verbalize logic while drafting algorithms
+3. **Pseudocode**: verbalize logic while drafting algorithms with comments.
 4. **Testing**: explain the "why" behind each test case
 :::
+
+
+::::
+::::{grid-item}
+:class: sd-m-auto
+
+:::{admonition} Benefits
+:class: tip
+- Helps to **clarify ideas** and **identify unknowns**.
+- Provides a structure that **allows to break down problems**.
+- Helps to formulate **efficient LLM queries**.
+- Provides (more than) the **necessary comments** to understand the resulting code.
+:::
+::::
+:::::
 
 Variation: Write down with pen on paper the pseudo code and logic.
 

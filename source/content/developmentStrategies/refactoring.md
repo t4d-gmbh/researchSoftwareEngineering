@@ -1,11 +1,38 @@
+---
+sd_hide_title: true
+---
 ## Refactoring
 
 {% if slide %}
 
-:::{admonition} Definition
-:class: note
-Refactoring restructures existing code to improve its design, readability, and maintainability *without* changing its external behavior.
+```{compound}
+{.centered}
+{.bigger}
+**Refactoring**:
+
+{.centered}
+Restructure existing code to increase usability, reusability, compatibility and performance *without* changing its external behavior.
+```
+
+:::::{grid} 1 2 2 2
+:gutter: 2
+
+::::{grid-item}
+
+:::{important}
+Nobody writes DRY, well-structured and well-documented orthogonal code on a first attempt!
 :::
+::::
+::::{grid-item-card} Separate Problems:
+1. Focus on implementing the routine
+2. Refactor into functions/classes
+3. Write tests
+4. Refactor for performance
+4. Refactor for usability
+4. Refactor for ...
+
+::::
+:::::
 
 {% else %}
 
@@ -17,79 +44,10 @@ Refactoring is the disciplined practice of restructuring existing code to improv
 
 It generally targets four dimensions:
 
-- **Performance**: making code faster or less resource-hungry.
 - **Usability**: making code easier to read and understand.
 - **Reusability**: structuring logic so it can be applied in different contexts.
 - **Compatibility**: ensuring the code integrates well with libraries and standards.
-
-{% endif %}
-
-## Functions
-
-{% if slide %}
-
-The primary tool for reusable code: the **function**.
-
-:::::{grid} 2
-::::{grid-item-card} Benefits
-- **Modularity**: break problems into small pieces
-- **Abstraction**: hide the "how," expose the "what"
-- **Testability**: verify functions in isolation
-- **Collaboration**: team members build different functions
-::::
-::::{grid-item-card} Good function design
-- Descriptive **verb-noun name** (`calculate_mean`, not `do_math`)
-- **Single responsibility**: one function, one job
-- **No global variables**: pass everything as arguments
-::::
-:::::
-
-{% else %}
-
-The primary mechanism for achieving reusable code is the function: a self-contained block of code that accepts inputs, processes them, and returns outputs.
-
-Functions give you modularity (small isolated pieces), abstraction (you can use a function without knowing its internals), testability (verify each one in isolation), and make collaboration straightforward (different people build different functions).
-
-A well-designed function follows a few rules:
-
-- **Descriptive name**: use a verb-noun pair that explains the action, e.g. `calculate_mean` rather than `do_math`.
-- **Single responsibility**: one function should do one thing. If it does three things, split it into three functions.
-- **No hidden dependencies**: pass all required data as arguments instead of relying on global variables.
-
-{% endif %}
-
-{% if page %}
-
-### Docstrings
-
-Every function should have a docstring. That's a comment block placed at the top of its definition.
-A good docstring lets a user understand how to call the function without reading the implementation.
-
-This course follows the **NumPy/SciPy docstring style**. A complete docstring includes a summary, parameter descriptions, return types, and usage examples:
-
-```python
-def add_numbers(a: int, b: int) -> int:
-    """Add two numbers together.
-
-    Parameters
-    ----------
-    a
-        The first number to add.
-    b
-        The second number to add.
-
-    Returns
-    -------
-    int
-        The sum of `a` and `b`.
-
-    Examples
-    -------
-    >>> add_numbers(2, 3)
-    5
-    """
-    return a + b
-```
+- **Performance**: making code faster or less resource-hungry.
 
 ### Refactoring in practice
 

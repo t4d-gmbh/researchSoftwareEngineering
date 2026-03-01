@@ -6,8 +6,9 @@
 :maxdepth: 3
 
 ./rubberDucking
-./refactoring
+./functions
 ./unitTesting
+./refactoring
 ```
 
 {% else %}
@@ -16,10 +17,13 @@
 ```{include} ./rubberDucking.md
 ```
 
-```{include} ./refactoring.md
+```{include} ./functions.md
 ```
 
 ```{include} ./unitTesting.md
+```
+
+```{include} ./refactoring.md
 ```
 
 {% endif %}
