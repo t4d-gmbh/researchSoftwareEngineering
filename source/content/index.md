@@ -8,4 +8,5 @@
 ./extendedDocumentation/index
 ./includingData/index
 ./primerSoftwareDevelopment/index
+./developmentStrategies/index
 ```
