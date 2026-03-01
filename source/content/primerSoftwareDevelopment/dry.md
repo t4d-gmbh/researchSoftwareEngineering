@@ -1,14 +1,19 @@
-{% if build == "slides" %}
+---
+sd_hide_title: true
+---
 ## The DRY Principle
-{% else %}
-## The DRY Principle
-{% endif %}
 
 {% if slide %}
 
-### Don't Repeat Yourself
+```{compound}
+{.centered}
+{.bigger}
+**Don't Repeat Yourself**
 
-> *"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system."*
+{.centered}
+"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system."
+```
+
 
 :::::{grid} 2
 ::::{grid-item-card} Why DRY

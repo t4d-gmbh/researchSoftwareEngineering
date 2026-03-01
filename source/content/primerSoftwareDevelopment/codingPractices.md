@@ -50,16 +50,16 @@ If you need a comment to explain what a variable *is*, rename it instead.
 
 ---
 
+:::{admonition} Remember
+:class: important margin
+Code is read far more often than it is written.
+:::
+
 ### Consistency Over Cleverness
 
 - Stick to one style: indentation, naming, file structure
 - Consistency reduces cognitive load
 - Readability always beats brevity
-
-:::{admonition} Remember
-:class: important margin
-Code is read far more often than it is written.
-:::
 
 {% else %}
 

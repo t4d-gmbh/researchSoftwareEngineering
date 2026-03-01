@@ -1,7 +1,8 @@
-{% if slide %}
 ## Why Software Development Principles?
-
+{% if slide %}
 ::::{grid} 2
+:gutter: 2
+
 :::{grid-item-card} The Problem
 - Research code often starts as a quick script
 - "Just get it working" turns into 5000 lines nobody understands
@@ -15,8 +16,6 @@
 ::::
 
 {% else %}
-
-## Why Software Development Principles?
 
 Most research code starts as a quick script: load data, run analysis, plot results.
 That script grows. Parameters get hardcoded, functions get copy-pasted, and before long you have a tangled mess that only works on your machine, with your data, on a good day.

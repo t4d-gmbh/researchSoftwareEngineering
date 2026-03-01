@@ -1,16 +1,22 @@
-{% if build == "slides" %}
+---
+sd_hide_title: true
+---
 ## Orthogonal Code
-{% else %}
-## Orthogonal Code
-{% endif %}
 
 {% if slide %}
 
-### The Idea
+```{compound}
+{.centered}
+{.bigger}
+**Idea**:
 
-> Two components are **orthogonal** if changing one does not affect the other.
+{.centered}
+Two components are **orthogonal** if changing one does not affect the other.
+```
 
 :::::{grid} 2
+:gutter: 2
+
 ::::{grid-item-card} Benefits
 - Run parts of your analysis in isolation
 - Bugs stay contained to one component
@@ -26,16 +32,27 @@
 
 ### Example: Computation vs. Visualization
 
+:::::{grid}
+:gutter: 2
+
+::::{grid-item}
+:class: sd-m-auto
+
 :::{admonition} Non-orthogonal
 :class: warning
 Clustering and plotting mixed in the same loop. Want to change a plot color? Re-run the clustering.
 :::
 
+::::
+::::{grid-item}
+:class: sd-m-auto
+
 :::{admonition} Orthogonal
 :class: tip
 Separate the computation from the visualization. Store results, then plot independently. Change colors without re-running a 3-day computation.
 :::
-
+::::
+:::::
 {% else %}
 
 ### The Concept
