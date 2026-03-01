@@ -87,6 +87,12 @@ Optional dependencies are utilized to define distinct, compartmentalized executi
 **5. Tool Configuration (`[tool.*]`)**
 The configuration of external developer tools is consolidated within the `pyproject.toml`. Tables such as `[tool.pytest.ini_options]` or `[tool.ruff]` dictate the behavior of test runners, static type checkers, linters, and code formatters, ensuring uniform configurations across all execution environments.
 
+:::{admonition} Interpreter vs. Compilers
+:class: tip
+An *interpreter* is a program that directly executes instructions written in a programming language, line by line, without requiring prior compilation into machine code. In Python's case, the interpreter (e.g., `python3`) reads and runs `.py` files at runtime.
+*Compilers* translate the entire program at once, creating an executable file that runs quickly, whereas interpreters translate and execute code line-by-line, making them slower but easier for debugging.
+:::
+
 #### Alternative Ecosystems
 
 Standard Python tooling occasionally fails when projects require complex non-Python dependencies, such as specific C++ compilers, system-level libraries, or GPU drivers.
