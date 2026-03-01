@@ -64,7 +64,7 @@ By treating infrastructure as code, the exact hardware allocation, network topol
 
 {% else %}
 
-The deployment of Virtual Machines in cloud environments is typically managed via Infrastructure as Code (IaC). IaC allows VMs and their supporting infrastructure—comprising subnets, routers, and storage volumes—to be built declaratively using configuration files.
+The deployment of Virtual Machines in cloud environments is typically managed via Infrastructure as Code (IaC). IaC allows VMs and their supporting infrastructure (comprising subnets, routers, and storage volumes) to be built declaratively using configuration files.
 
 In OpenStack environments, this is natively managed by the **Heat** orchestration engine, or via third-party tools such as **Terraform** (for infrastructure provisioning) and **Ansible** (for configuration management).
 

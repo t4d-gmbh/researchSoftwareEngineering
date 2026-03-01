@@ -34,7 +34,7 @@ Execution is strictly dependent on the host kernel possessing all required modul
 
 {% else %}
 
-Containers operate via OS-level virtualization. This paradigm isolates the user space—the segment of system memory where applications, libraries, and binaries execute—while sharing a single Operating System kernel with the host machine.
+Containers operate via OS-level virtualization. This paradigm isolates the user space (that's the segment of system memory where applications, libraries, and binaries are executed) while sharing a single Operating System kernel with the host machine.
 
 Because containers execute directly on the host kernel, this architecture eliminates overhead, resulting in execution speeds nearly identical to native host processes.
 
@@ -68,7 +68,7 @@ A container manifest strictly versions and isolates the Python interpreter along
 {% else %}
 As previously established, a Python `.venv` isolates only Python-domain packages. It inherently relies on the host operating system to provide underlying C libraries, network protocols, and hardware drivers.
 
-Containers encompass the entire system user space. A container manifest declares the base operating system (e.g., Ubuntu 22.04, Alpine Linux) and all subsequent system-level modifications. This ensures that non-Python dependencies—such as core system libraries, compiler toolchains, or standalone software tools—are strictly versioned and isolated alongside the Python interpreter. The container isolates the execution context from the host's global variables, configuration files, and installed binaries.
+Containers encompass the entire system user space. A container manifest declares the base operating system (e.g., Ubuntu 22.04, Alpine Linux) and all subsequent system-level modifications. This ensures that non-Python dependencies (such as core system libraries, compiler toolchains, or standalone software tools) are strictly versioned and isolated alongside the Python interpreter. The container isolates the execution context from the host's global variables, configuration files, and installed binaries.
 {% endif %}
 
 #### Declarative Manifests and Runtime Execution

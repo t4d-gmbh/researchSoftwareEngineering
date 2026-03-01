@@ -18,7 +18,7 @@ An OpenStack environment is composed of interacting microservices, each managing
 Because VMs operate as full network citizens with complete operating systems, their security model is managed via network-level firewalls and cryptographic access, rather than Linux namespaces.
 
 **1. Security Groups**
-Traffic to and from a VM is strictly governed by Security Groups—virtualized, stateful firewalls evaluated at the hypervisor level. By default, all ingress (incoming) traffic to a newly provisioned VM is implicitly denied. Explicit rules must be defined to permit access. 
+Traffic to and from a VM is strictly governed by Security Groups. These are virtualized, stateful firewalls that are evaluated at the hypervisor level. By default, all ingress (incoming) traffic to a newly provisioned VM is implicitly denied. Explicit rules must be defined to permit access. 
 
 For example, to allow remote administration, a Security Group rule must be configured to permit ingress TCP traffic on Port 22 (SSH). To host a web dashboard (e.g., JupyterHub), Port 443 (HTTPS) must be explicitly opened.
 

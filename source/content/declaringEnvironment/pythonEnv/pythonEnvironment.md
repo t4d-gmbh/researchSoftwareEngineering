@@ -11,7 +11,7 @@
 :gutter: 2
 
 :::{grid-item-card} Standard Tooling
-**`venv` & `pip` & `dotenv**`
+**`venv` & `pip` & `dotenv`**
 
 * `venv`: Generates the isolated `.venv` directory.
 * `pip`: Installs packages into the localized directory.
