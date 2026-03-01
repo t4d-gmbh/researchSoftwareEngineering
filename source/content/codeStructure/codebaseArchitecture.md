@@ -9,7 +9,7 @@ A structural foundation that physically isolates distinct operational domains: c
 
 {% else %}
 A reproducible and scalable computational project requires a structural foundation that enforces the Separation of Concerns (SoC).
-The codebase must be organized so that distinct operational domains — code, configuration parameters, environment variables, infrastructure definitions, and data — are as isolated from one another as possible. 
+The codebase must be organized so that distinct operational domains, like code, configuration parameters, environment variables, infrastructure definitions, and data, are as isolated from one another as possible. 
 
 By designing the directory structure to reflect these boundaries, the codebase naturally prevents the entanglement of logic and configuration.
 Furthermore, the structural separation guarantees that core analytical logic can be reused across multiple execution contexts without duplicating code.
