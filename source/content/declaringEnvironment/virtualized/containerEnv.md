@@ -38,7 +38,10 @@ Containers operate via OS-level virtualization. This paradigm isolates the user 
 
 Because containers execute directly on the host kernel, this architecture eliminates overhead, resulting in execution speeds nearly identical to native host processes.
 
-While OS-level virtualization provides near-instant instantiation and minimal overhead, the shared kernel architecture implies a structural limitation. If a containerized application requires specific kernel modules or features (e.g., specific networking subsystems or eBPF capabilities) that are absent in the host's kernel, the execution will fail.
+While OS-level virtualization provides near-instant instantiation and minimal overhead, the shared kernel architecture implies a structural limitation. If a containerized application requires specific kernel modules or features (e.g., specific networking subsystems or eBPF capabilities[^1]) that are absent in the host's kernel, the execution will fail.
+
+[^1]: eBPF (extended Berkeley Packet Filter) is a technology that allows programs to run sandboxed within the Linux kernel without changing kernel source code or loading kernel modules. It is widely used for networking, security, and observability tasks.
+
 
 #### Extending Beyond Language Environments
 {% endif %}
