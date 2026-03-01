@@ -7,6 +7,7 @@
 ./projectDocumentation/index
 ./extendedDocumentation/index
 ./includingData/index
+./codeStructure/index
 ./declaringEnvironment/index
 ./primerSoftwareDevelopment/index
 ./developmentStrategies/index
