@@ -1,0 +1,210 @@
+<style>
+/* ==========================================
+   1. LAYOUT & SPLIT VIEW
+   ========================================== */
+.tree-radio { display: none !important; }
+
+.scaffold-split {
+    display: flex;
+    border: 1px solid var(--pst-color-border);
+    border-radius: 8px;
+    height: 50vh;
+    min-height: 450px;
+    margin-bottom: 20px;
+    background-color: var(--pst-color-background);
+}
+
+.tree-pane {
+    flex: 0 0 40%; 
+    padding: 15px;
+    border-right: 1px solid var(--pst-color-border);
+    overflow-y: auto;
+}
+
+.desc-pane {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    background-color: var(--pst-color-surface);
+}
+
+/* ==========================================
+   2. INTERACTIVE LOGIC (Descriptions)
+   ========================================== */
+.desc-item {
+    display: none;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+#radio-root:checked ~ .scaffold-split #desc-root,
+#radio-readme:checked ~ .scaffold-split #desc-readme,
+#radio-pyproj:checked ~ .scaffold-split #desc-pyproj,
+#radio-git:checked ~ .scaffold-split #desc-git,
+#radio-env:checked ~ .scaffold-split #desc-env,
+#radio-env-example:checked ~ .scaffold-split #desc-env-example,
+#radio-ai:checked ~ .scaffold-split #desc-ai,
+#radio-license:checked ~ .scaffold-split #desc-license,
+#radio-citation:checked ~ .scaffold-split #desc-citation,
+#radio-contrib:checked ~ .scaffold-split #desc-contrib,
+#radio-codeofconduct:checked ~ .scaffold-split #desc-codeofconduct,
+#radio-gitlab:checked ~ .scaffold-split #desc-gitlab,
+#radio-github:checked ~ .scaffold-split #desc-github,
+#radio-data:checked ~ .scaffold-split #desc-data,
+#radio-data-raw:checked ~ .scaffold-split #desc-data-raw,
+#radio-data-readme:checked ~ .scaffold-split #desc-data-readme,
+#radio-data-interim:checked ~ .scaffold-split #desc-data-interim,
+#radio-data-final:checked ~ .scaffold-split #desc-data-final,
+#radio-scripts:checked ~ .scaffold-split #desc-scripts,
+#radio-scripts-drafts:checked ~ .scaffold-split #desc-scripts-drafts,
+#radio-notebooks:checked ~ .scaffold-split #desc-notebooks,
+#radio-notebooks-drafts:checked ~ .scaffold-split #desc-notebooks-drafts,
+#radio-config:checked ~ .scaffold-split #desc-config,
+#radio-src:checked ~ .scaffold-split #desc-src,
+#radio-mypkg:checked ~ .scaffold-split #desc-mypkg,
+#radio-results:checked ~ .scaffold-split #desc-results,
+#radio-tests:checked ~ .scaffold-split #desc-tests,
+#radio-tests-unit:checked ~ .scaffold-split #desc-tests-unit,
+#radio-tests-integration:checked ~ .scaffold-split #desc-tests-integration,
+#radio-tests-file:checked ~ .scaffold-split #desc-tests-file,
+#radio-examples:checked ~ .scaffold-split #desc-examples,
+#radio-docs:checked ~ .scaffold-split #desc-docs,
+#radio-bench:checked ~ .scaffold-split #desc-bench,
+#radio-github-workflows:checked ~ .scaffold-split #desc-github-workflows {
+    display: block !important;
+}
+
+#radio-root:checked ~ .scaffold-split label[for="radio-root"],
+#radio-readme:checked ~ .scaffold-split label[for="radio-readme"],
+#radio-pyproj:checked ~ .scaffold-split label[for="radio-pyproj"],
+#radio-git:checked ~ .scaffold-split label[for="radio-git"],
+#radio-env:checked ~ .scaffold-split label[for="radio-env"],
+#radio-ai:checked ~ .scaffold-split label[for="radio-ai"],
+#radio-license:checked ~ .scaffold-split label[for="radio-license"],
+#radio-citation:checked ~ .scaffold-split label[for="radio-citation"],
+#radio-contrib:checked ~ .scaffold-split label[for="radio-contrib"],
+#radio-codeofconduct:checked ~ .scaffold-split label[for="radio-codeofconduct"],
+#radio-gitlab:checked ~ .scaffold-split label[for="radio-gitlab"],
+#radio-github:checked ~ .scaffold-split label[for="radio-github"],
+#radio-data:checked ~ .scaffold-split label[for="radio-data"],
+#radio-data-raw:checked ~ .scaffold-split label[for="radio-data-raw"],
+#radio-data-readme:checked ~ .scaffold-split label[for="radio-data-readme"],
+#radio-data-interim:checked ~ .scaffold-split label[for="radio-data-interim"],
+#radio-data-final:checked ~ .scaffold-split label[for="radio-data-final"],
+#radio-scripts:checked ~ .scaffold-split label[for="radio-scripts"],
+#radio-scripts-drafts:checked ~ .scaffold-split label[for="radio-scripts-drafts"],
+#radio-notebooks:checked ~ .scaffold-split label[for="radio-notebooks"],
+#radio-notebooks-drafts:checked ~ .scaffold-split label[for="radio-notebooks-drafts"],
+#radio-config:checked ~ .scaffold-split label[for="radio-config"],
+#radio-src:checked ~ .scaffold-split label[for="radio-src"],
+#radio-mypkg:checked ~ .scaffold-split label[for="radio-mypkg"],
+#radio-results:checked ~ .scaffold-split label[for="radio-results"],
+#radio-tests:checked ~ .scaffold-split label[for="radio-tests"],
+#radio-tests-unit:checked ~ .scaffold-split label[for="radio-tests-unit"],
+#radio-tests-integration:checked ~ .scaffold-split label[for="radio-tests-integration"],
+#radio-tests-file:checked ~ .scaffold-split label[for="radio-tests-file"],
+#radio-examples:checked ~ .scaffold-split label[for="radio-examples"],
+#radio-docs:checked ~ .scaffold-split label[for="radio-docs"],
+#radio-bench:checked ~ .scaffold-split label[for="radio-bench"],
+#radio-github-workflows:checked ~ .scaffold-split label[for="radio-github-workflows"] {
+    color: var(--pst-color-primary) !important;
+    background-color: rgba(var(--pst-color-primary-rgb), 0.1);
+    padding: 0 5px;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   3. THE PLUS/MINUS FOLDER LOGIC & ALIGNMENT
+   ========================================== */
+/* The "Eyebrow" Context Label */
+.context-label {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--pst-color-text-muted); 
+    margin-bottom: -10px;
+    display: block;
+}
+.project-tree ul {
+    list-style-type: none;
+    padding-left: 12px;
+    margin: 0;
+    border-left: 1px dotted var(--pst-color-border);
+}
+
+.project-tree li,
+.project-tree details {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: var(--pst-font-family-monospace);
+    font-weight: 700 !important;
+}
+
+.project-tree details summary,
+.project-tree li:not(:has(details)) {
+    padding: 4px 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.project-tree details summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.project-tree details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* --- FOLDER SPACING --- */
+.project-tree details summary::before {
+    content: "📁"; 
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+    white-space: nowrap;   
+    flex-shrink: 0; 
+    width: 1rem; 
+    margin-right: 1.1rem;
+    padding: 0 0.1rem;
+}
+
+.project-tree details[open] > summary::before {
+    content: "📂"; 
+}
+
+/* Ensure folder labels don't get double-spaced */
+.project-tree details summary label {
+    margin-left: 0 !important;
+}
+
+/* --- FILE SPACING --- */
+.project-tree li:not(:has(details))::before {
+    content: ""; 
+    display: inline-block;
+    flex-shrink: 0;
+    width: 3px;
+}
+
+.project-tree li:not(:has(details)) label {
+    margin-left: 8px !important; 
+}
+
+.project-tree label {
+    cursor: pointer;
+    margin-bottom: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding-right: 10px;
+}
+.context-badge {
+    opacity: 0.8;
+    margin-left: auto;
+    padding-right: 10px;
+}
+</style>

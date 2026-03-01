@@ -1,8 +1,11 @@
 ```{toctree}
-:maxdepth: {% if build == "slides" %}1{% else %}4{% endif %}
+:maxdepth: {% if build == "slides" %}1{% else %}2{% endif %}
 :caption: Research Software Engineering
 
+./computationalProject/index.md
+./introVsc/index
+./projectDocumentation/index
+./extendedDocumentation/index
+./includingData/index
 ./primerSoftwareDevelopment/index
-howto/index
-examples/index
 ```
