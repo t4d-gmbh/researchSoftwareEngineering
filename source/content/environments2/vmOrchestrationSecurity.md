@@ -1,11 +1,11 @@
 {% if page %}
-### Cloud Orchestration, Tooling, and Security Models
+#### Cloud Orchestration, Tooling, and Security Models
 
 Managing hardware virtualization at scale requires a cloud orchestration platform. **OpenStack** serves as the standard open-source paradigm for institutional and private research clouds, modularizing compute, networking, and security into discrete APIs.
 
 
 
-#### Core Orchestration Components
+##### Core Orchestration Components
 
 An OpenStack environment is composed of interacting microservices, each managing a specific domain of hardware virtualization:
 
@@ -13,7 +13,7 @@ An OpenStack environment is composed of interacting microservices, each managing
 * **Glance (Image Service)**: The central registry for virtual disk images. It stores base operating system images (e.g., Rocky Linux, Ubuntu) and custom snapshots created by researchers. It serves a similar architectural purpose to a container registry (like Docker Hub), but distributes full OS payloads.
 * **Neutron (Networking)**: Manages Software-Defined Networking (SDN). It provisions virtual switches, routers, subnets, and floating IP addresses, allowing isolated private networks to be dynamically constructed for specific research groups.
 
-#### Virtualized Security Models
+##### Virtualized Security Models
 
 Because VMs operate as full network citizens with complete operating systems, their security model is managed via network-level firewalls and cryptographic access, rather than Linux namespaces.
 

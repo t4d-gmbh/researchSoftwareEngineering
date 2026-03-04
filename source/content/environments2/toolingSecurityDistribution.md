@@ -1,4 +1,4 @@
-### Container Runtimes
+#### Container Runtimes
 
 {% if slide %}
 
@@ -8,7 +8,7 @@ While based on the same underlying principles (Linux namespaces and cgroups), ru
 {% else %}
 While the underlying principle (Linux namespaces and cgroups) remains consistent, the implementations of container runtimes vary significantly, primarily regarding security and isolation policies.
 
-#### Docker and Podman
+##### Docker and Podman
 
 {% endif %}
 
@@ -39,7 +39,7 @@ While the underlying principle (Linux namespaces and cgroups) remains consistent
 
 **Podman** functions as an open-source, daemonless alternative to Docker. It implements rootless containers by utilizing user namespaces, allowing unprivileged users to build and execute containers without root access. Podman is a drop-in replacement for Docker, parsing the same `Dockerfile` manifests and utilizing identical command-line syntax.
 
-#### Apptainer (formerly Singularity)
+##### Apptainer (formerly Singularity)
 
 {% endif %}
 
@@ -71,7 +71,7 @@ Natively executes the payload as the **invoking user**. No privilege escalation 
 1. **Image Format**: Instead of managing a layered filesystem cache via a daemon, Apptainer compiles the entire container into a single, immutable flat file (Singularity Image Format, `.sif`). This allows containers to be transferred, archived, and executed identically to standard binary files.
 2. **Execution Privilege**: Apptainer natively executes the container payload as the invoking user. No privilege escalation occurs. If `user_A` runs the container, the processes inside the container are owned by `user_A` on the host system.
 
-#### Distribution via Container Registries
+##### Distribution via Container Registries
 
 {% endif %}
 

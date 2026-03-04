@@ -1,9 +1,10 @@
-# Python Environments
+# Environments 1.0
 
 {% if slide %}
 
 ```{toctree}
 :maxdepth: 1
+:caption: Python Environments
 
 ./declarationStandards
 ./pythonEnvironment
@@ -12,6 +13,7 @@
 
 {% else %}
 
+## Python Environments
 
 ```{include} ./declarationStandards.md
 ```
@@ -23,6 +25,4 @@
 ```
 
 {% endif %}
-
-
 

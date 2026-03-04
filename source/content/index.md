@@ -8,7 +8,8 @@
 ./extendedDocumentation/index
 ./includingData/index
 ./codeStructure/index
-./declaringEnvironment/index
+./environments1/index
 ./primerSoftwareDevelopment/index
 ./developmentStrategies/index
+./environments2/index
 ```

@@ -1,9 +1,9 @@
 {% if page %}
-### Virtual Disks, Storage, and State Management
+#### Virtual Disks, Storage, and State Management
 
 The filesystem of a Virtual Machine is managed fundamentally differently than the layered union filesystems utilized by containers. VM storage relies on virtual disk images and block storage abstractions.
 
-#### Virtual Disk Images and Formats
+##### Virtual Disk Images and Formats
 
 A VM's primary filesystem is encapsulated within a single file known as a virtual disk image. When a VM boots, the hypervisor mounts this file, and the guest OS treats it as a physical hard drive.
 
@@ -11,7 +11,7 @@ The **QCOW2** (QEMU Copy On Write) format is the standard for OpenStack and KVM 
 
 
 
-#### Ephemeral vs. Persistent Storage
+##### Ephemeral vs. Persistent Storage
 
 In cloud architectures like OpenStack, storage state is divided into two distinct paradigms:
 
@@ -23,7 +23,7 @@ For research data, databases, and critical state preservation, persistent block 
 
 If the attached VM is destroyed, the Cinder volume persists independently. It can subsequently be detached and reattached to a newly provisioned VM, ensuring data lineage is maintained across compute lifecycles.
 
-#### Snapshots and Image Capture
+##### Snapshots and Image Capture
 
 To capture a reproducible state of a virtual machine (including its installed libraries, kernel modifications, and configurations) a snapshot is generated.
 

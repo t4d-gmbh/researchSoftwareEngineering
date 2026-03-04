@@ -1,4 +1,4 @@
-### Containerized Environments
+#### Containerized Environments
 
 {% if slide %}
 
@@ -9,7 +9,7 @@ Computational reproducibility frequently requires environmental control that ext
 
 To achieve system-level reproducibility, containerization is utilized. Containers provide a mechanism to package an application alongside its entire required user-space operating system.
 
-#### Principles of OS-Level Virtualization
+##### Principles of OS-Level Virtualization
 
 {% endif %}
 
@@ -43,7 +43,7 @@ While OS-level virtualization provides near-instant instantiation and minimal ov
 [^1]: eBPF (extended Berkeley Packet Filter) is a technology that allows programs to run sandboxed within the Linux kernel without changing kernel source code or loading kernel modules. It is widely used for networking, security, and observability tasks.
 
 
-#### Extending Beyond Language Environments
+##### Extending Beyond Language Environments
 {% endif %}
 
 {% if slide %}
@@ -71,7 +71,7 @@ As previously established, a Python `.venv` isolates only Python-domain packages
 Containers encompass the entire system user space. A container manifest declares the base operating system (e.g., Ubuntu 22.04, Alpine Linux) and all subsequent system-level modifications. This ensures that non-Python dependencies (such as core system libraries, compiler toolchains, or standalone software tools) are strictly versioned and isolated alongside the Python interpreter. The container isolates the execution context from the host's global variables, configuration files, and installed binaries.
 {% endif %}
 
-#### Declarative Manifests and Runtime Execution
+##### Declarative Manifests and Runtime Execution
 
 {% if slide %}
 

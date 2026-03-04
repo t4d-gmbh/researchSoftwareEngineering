@@ -1,11 +1,13 @@
-# Virtualized Environments
+# Environments 2.0
 
 {% if slide %}
 
 ```{toctree}
 :maxdepth: 1
+:caption: Virtualized Environments
 
 ./containerEnv
+./containerImplementation
 ./toolingSecurityDistribution
 ./vmEnv
 ./vmLimitsPitfalls
@@ -13,9 +15,13 @@
 
 {% else %}
 
-## Container
+## Virtualized Environments
+
+### Container
 
 ```{include} ./containerEnv.md
+```
+```{include} ./containerImplementation.md
 ```
 ```{include} ./layeringFilesystems.md
 ```
@@ -24,7 +30,7 @@
 ```{include} ./limitationsPitfalls.md
 ```
 
-## Virtual Machines
+### Virtual Machines
 
 ```{include} ./vmEnv.md
 ```
@@ -36,6 +42,7 @@
 ```
 
 {% endif %}
+
 
 
 

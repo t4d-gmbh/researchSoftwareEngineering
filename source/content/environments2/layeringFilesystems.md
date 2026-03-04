@@ -1,11 +1,11 @@
 {% if page %}
-### Image Layering and Union Filesystems
+#### Image Layering and Union Filesystems
 
 Container images are not monolithic data blobs; they are structurally organized via layered filesystems, typically utilizing a Union Filesystem implementation (e.g., OverlayFS). This architecture dictates how images are constructed, stored, and executed.
 
 
 
-#### Principles of Layered Construction
+##### Principles of Layered Construction
 
 When a container runtime processes a declarative manifest (e.g., a `Dockerfile`), each sequential directive (such as `RUN`, `COPY`, or `ADD`) generates a discrete filesystem diff.
 This diff is committed as an immutable, read-only layer.
@@ -14,7 +14,7 @@ At runtime, the storage driver stacks these independent read-only layers into a 
 To permit application execution, a thin, ephemeral read-write layer is superimposed on top of the stack.
 Any modifications made by the application during runtime (e.g., writing log files) occur exclusively within this top ephemeral layer.
 
-#### System-Level Resource Optimization
+##### System-Level Resource Optimization
 
 This architecture provides two structural optimizations:
 

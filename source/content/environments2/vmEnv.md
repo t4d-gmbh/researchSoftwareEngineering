@@ -1,4 +1,4 @@
-### VM Environments 
+#### VM Environments 
 
 {% if slide %}
 
@@ -13,7 +13,7 @@ Exact system states, custom kernels, and specialized drivers can be reliably ver
 {% else %}
 Exact system states, custom kernels, and specialized drivers can be reliably versioned and replicated using Hardware Virtualization. Virtual Machines (VMs) provide a mechanism to emulate an entire physical computer system. Each VM operates a complete, independent guest operating system, ensuring absolute computational reproducibility and environmental control.
 
-#### Principles of Hardware Virtualization
+##### Principles of Hardware Virtualization
 
 {% endif %}
 
@@ -38,7 +38,7 @@ Hypervisors are structurally categorized into two types:
 
 Because a full guest kernel must be booted and hardware calls must be translated by the hypervisor, VMs incur a computational overhead. However, this strict boundary provides absolute environmental determinism and enhanced security isolation.
 
-#### Infrastructure as Code (IaC)
+##### Infrastructure as Code (IaC)
 
 {% endif %}
 

@@ -1,9 +1,9 @@
 {% if page %}
-### Hardware Limitations and Operational Pitfalls
+#### Hardware Limitations and Operational Pitfalls
 
 Researchers frequently encounter specific architectural limitations and operational pitfalls when adopting containers, especially when migrating from standard VM environments.
 
-#### Hardware and State Limitations
+##### Hardware and State Limitations
 
 **1. Hardware Architecture Binding**  
 Like virtual environments, containers are bound to the CPU architecture upon which they are built.
@@ -23,9 +23,9 @@ Container filesystems are ephemeral.
 Any data written to the container's internal filesystem during execution is destroyed when the container terminates.
 Persistent data generation (e.g., saving model weights or processed datasets) requires the explicit configuration of bind mounts (or volumes), which map a directory on the host filesystem directly into the container's isolated namespace.
 
-#### Operational Pitfalls
+##### Operational Pitfalls
 
-##### Discrepancies in Filesystem Layers
+###### Discrepancies in Filesystem Layers
 
 **1. Persistent Image Bloat (The Deletion Fallacy)**  
 Because intermediate container layers are strictly immutable, deleting a file in a subsequent layer does not reclaim disk space.
@@ -47,7 +47,7 @@ This design choice explicitly abandons host-level deduplication to optimize for 
 Parallel filesystems (e.g., Lustre, GPFS) exhibit severe performance degradation when managing thousands of small overlay files.
 By squashing the layers into a single `.sif` binary, Apptainer reduces I/O metadata operations, ensuring the container loads efficiently across thousands of distributed compute nodes.
 
-##### Discrepancies in Isolation Policies
+###### Discrepancies in Isolation Policies
 
 A major operational pitfall arises from the discrepancy in default isolation policies between Docker/Podman and Apptainer.
 
