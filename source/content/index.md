@@ -9,7 +9,10 @@
 ./includingData/index
 ./codeStructure/index
 ./environments1/index
+./porjectExo1.md
 ./primerSoftwareDevelopment/index
+./porjectExo2.md
 ./developmentStrategies/index
+./projectExo3.md
 ./environments2/index
 ```
