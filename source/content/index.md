@@ -13,6 +13,7 @@
 ./primerSoftwareDevelopment/index
 ./porjectExo2.md
 ./developmentStrategies/index
+./refactoring/index
 ./projectExo3.md
 ./environments2/index
 ```
