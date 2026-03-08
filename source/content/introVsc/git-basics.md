@@ -81,14 +81,14 @@ A version of the repository hosted elsewhere (e.g., GitHub, GitLab). Remotes ena
 :::{grid-item}
 :column: 6
 :class: sd-m-auto
-[![](https://mermaid.ink/img/pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw?type=png)](https://mermaid.live/edit#pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw)
+* Commits form a **directed acyclic graph** (DAG)
+* Branches are just **labels** pointing to commits
+* History shows **who** changed **what**, **when**, and **why**
 :::
 :::{grid-item}
 :column: 6
 :class: sd-m-auto
-* Commits form a **directed acyclic graph** (DAG)
-* Branches are just **labels** pointing to commits
-* History shows **who** changed **what**, **when**, and **why**
+[![](https://mermaid.ink/img/pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw?type=png)](https://mermaid.live/edit#pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw)
 :::
 ::::
 {% else %}
