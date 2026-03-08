@@ -75,11 +75,7 @@ A version of the repository hosted elsewhere (e.g., GitHub, GitLab). Remotes ena
 
 
 {% if slide %}
-```text
-A --- B --- C --- D  (main)
-       \
-        E --- F  (feature-branch)
-```
+[![](https://mermaid.ink/img/pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul?type=png)](https://mermaid.live/edit#pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul)
 
 * Commits form a **directed acyclic graph** (DAG)
 * Branches are just **labels** pointing to commits
@@ -90,11 +86,7 @@ A --- B --- C --- D  (main)
 Git organizes commits into a directed acyclic graph (DAG), where each commit points to its parent(s).
 This structure allows Git to efficiently track the evolution of a project and identify where different development lines diverged or merged.
 
-```text
-A --- B --- C --- D  (main branch)
-       \
-        E --- F  (feature-branch)
-```
+[![](https://mermaid.ink/img/pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul?type=png)](https://mermaid.live/edit#pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul)
 
 In this example, commit B is the common ancestor of both branches.
 The `main` branch has progressed through commits C and D, while `feature-branch` has progressed through commits E and F.
