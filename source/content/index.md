@@ -9,14 +9,14 @@
 ./includingData/index
 ./codeStructure/index
 ./environments1/index
-{% if build == "slides" %}./projectExo1.md{% endif %}
+{% if slide %}./projectExo1.md{% endif %}
 ./primerSoftwareDevelopment/index
-{% if build == "slides" %}./projectExo2.md{% endif %}
+{% if slide %}./projectExo2.md{% endif %}
 ./developmentStrategies/index
 ./refactoring/index
 ./onPython/index
 ./primerParallelism/index
-{% if build == "slides" %}./projectExo3.md{% endif %}
+{% if slide %}./projectExo3.md{% endif %}
 ./environments2/index
-{% if build == "slides" %}./projectHW.md{% endif %}
+{% if slide %}./projectHW.md{% endif %}
 ```
