@@ -14,39 +14,26 @@ While the underlying principle (Linux namespaces and cgroups) remains consistent
 
 {% if slide %}
 
-::::{grid} 2
-:gutter: 2
+::::::::{tab-set}
 
-:::{grid-item-card} 🐳 Docker
+:::::::{tab-item} 🐳 Docker
 
 * Historical standard for containerization.
 * Relies on a high-privilege **root daemon**.
 * Widely banned on HPC clusters due to the inherent security risks of root-level access.
-:::
 
-:::{grid-item-card} 🦭 Podman
+:::::::
+
+:::::::{tab-item} 🦭 Podman
 
 * Open-source, **daemonless** alternative.
 * Implements **rootless** containers via user namespaces (no root access required).
 * Drop-in replacement utilizing identical command-line syntax.
-:::
 
-::::
+:::::::
 
-{% else %}
+:::::::{tab-item} Apptainer
 
-**Docker** is the historical standard for containerization. It relies on a background daemon running with high privileges (`root`). While standard in web microservices, Docker is widely banned on High-Performance Computing (HPC) clusters due to the inherent security risks of granting users access to a root-level daemon.
-
-**Podman** functions as an open-source, daemonless alternative to Docker. It implements rootless containers by utilizing user namespaces, allowing unprivileged users to build and execute containers without root access. Podman is a drop-in replacement for Docker, parsing the same `Dockerfile` manifests and utilizing identical command-line syntax.
-
-##### Apptainer (formerly Singularity)
-
-{% endif %}
-
-{% if slide %}
-
-::::::{grid}
-:::::{grid-item-card} Apptainer
 Industry Standard for HPC **diverging from Docker and Podman**:
 
 ::::{grid} 2
@@ -61,8 +48,21 @@ Natively executes the payload as the **invoking user**. No privilege escalation 
 :::
 ::::
 
-:::::
-::::::
+:::::::
+
+::::::::
+
+{% else %}
+
+**Docker** is the historical standard for containerization. It relies on a background daemon running with high privileges (`root`). While standard in web microservices, Docker is widely banned on High-Performance Computing (HPC) clusters due to the inherent security risks of granting users access to a root-level daemon.
+
+**Podman** functions as an open-source, daemonless alternative to Docker. It implements rootless containers by utilizing user namespaces, allowing unprivileged users to build and execute containers without root access. Podman is a drop-in replacement for Docker, parsing the same `Dockerfile` manifests and utilizing identical command-line syntax.
+
+##### Apptainer (formerly Singularity)
+
+{% endif %}
+
+{% if slide %}
 
 {% else %}
 
