@@ -14,6 +14,8 @@
 ./porjectExo2.md
 ./developmentStrategies/index
 ./refactoring/index
+./onPython/index
+./primerParallelism/index
 ./projectExo3.md
 ./environments2/index
 ```

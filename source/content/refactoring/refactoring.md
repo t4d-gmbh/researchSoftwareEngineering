@@ -1,7 +1,7 @@
 ---
 sd_hide_title: true
 ---
-## Refactoring
+## Definition
 
 {% if slide %}
 
@@ -11,7 +11,7 @@ sd_hide_title: true
 **Refactoring**:
 
 {.centered}
-Restructure existing code to increase usability, reusability, compatibility and performance *without* changing its external behavior.
+Restructure existing code to increase **usability**, **reusability**, **compatibility** and **performance** *without* changing its external behavior.
 ```
 
 :::::{grid} 1 2 2 2
@@ -20,12 +20,18 @@ Restructure existing code to increase usability, reusability, compatibility and 
 ::::{grid-item}
 
 :::{important}
+Nobody writes a codebase that respects strictly the Separation of Concerns (SoC) principle from scratch!
+:::
+:::{important}
 Nobody writes DRY, well-structured and well-documented orthogonal code on a first attempt!
 :::
 ::::
-::::{grid-item-card} Separate Problems:
+::::{grid-item-card} Serialize Problems:
 1. Focus on implementing the routine
-2. Refactor into functions/classes
+1. Refactor data out
+1. Refactor environment variables out
+1. Refactor configuration out
+2. Refactor remaining codebase into minimal script plus functions \& classes
 3. Write tests
 4. Refactor for performance
 4. Refactor for usability
