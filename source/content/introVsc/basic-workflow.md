@@ -20,6 +20,15 @@ Finally, the updated local history is uploaded back to the remote repository uti
 :class: sd-m-auto
 
 {% endif %}
+
+{% if slide %}
+::::{grid} 1 2 2 2
+:gutter: 2
+
+:::{grid-item}
+:class: sd-m-auto
+{% endif %}
+
 ```text
 ┌──────────┐
 │  Remote  │
@@ -39,6 +48,33 @@ Finally, the updated local history is uploaded back to the remote repository uti
 │Repository│
 └──────────┘
 ```
+
+{% if slide %}
+:::
+:::{grid-item}
+:class: sd-m-auto
+
+:::{grid-item}
+:class: sd-m-auto
+{% else %}
+:::
+{% endif %}
+
+:::{admonition} Best Practice
+:class: tip {% if page %}margin{% endif %}
+Clear commit messages are essential for reference and orientation.
+
+:::{image} https://imgs.xkcd.com/comics/git_commit.png
+:alt: Git Commit
+:align: center
+:width: {% if page %}100%{% else %}60%{% endif %}
+:class: sd-m-auto
+
+{.smaller}
+*Source*: [xkcd.com/1296](https://xkcd.com/1296)
+:::
+
+
 {% if page %}
 
 :::
@@ -158,19 +194,6 @@ git merge feature-analysis
 
 {% endif %}
 
-:::{admonition} Best Practice
-:class: tip {% if page %}margin{% endif %}
-Clear commit messages are essential for reference and orientation.
-
-:::{image} https://imgs.xkcd.com/comics/git_commit.png
-:alt: Git Commit
-:align: center
-:width: {% if page %}100%{% else %}60%{% endif %}
-:class: sd-m-auto
-
-{.smaller}
-*Source*: [xkcd.com/1296](https://xkcd.com/1296)
-:::
 
 {% if page %}
 ### Commit Message Best Practices
