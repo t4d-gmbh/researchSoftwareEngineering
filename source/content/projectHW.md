@@ -5,7 +5,7 @@
 **Finish this weeks exercises**  
 Continue and try to finish the three exercises form this week.
 
-Invite @mattedoleducchi and/or @j-i-l to your exercise projects.
+Invite [@mattedoleducchi](https://github.com/matteodelucchi) and/or [@j-i-l](https://github.com/j-i-l) to your exercise projects.
 
 **Create a HelloWorld Apptainer container**  
 
