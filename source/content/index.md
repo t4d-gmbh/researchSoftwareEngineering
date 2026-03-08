@@ -11,13 +11,13 @@
 ./environments1/index
 {% if build == "slides" %}./projectExo1.md{% endif %}
 ./primerSoftwareDevelopment/index
-./projectExo2.md
-{% if build == "slides" %}./restructYourCodeBase/index{% endif %}
+{% if build == "slides" %}./projectExo2.md{% endif %}
 ./developmentStrategies/index
 ./refactoring/index
 ./onPython/index
 ./primerParallelism/index
 ./projectExo3.md
-{% if build == "slides" %}./refactorYourProject/index{% endif %}
+{% if build == "slides" %}./projectExo3.md/index{% endif %}
 ./environments2/index
+{% if build == "slides" %}./projectHW.md/index{% endif %}
 ```

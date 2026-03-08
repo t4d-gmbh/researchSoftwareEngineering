@@ -1,4 +1,4 @@
-## Project Exercise 2
+## ✏️ Project Exercise 2 ✏️
 
 ```{epigraph}
 {.centered}
@@ -14,12 +14,14 @@
 ::::{grid} 1 3 3 3
 :gutter: 2
 
-:::{grid-item-card} Orthognoal 
-
+:::{grid-item-card} Orthogonal 
+Two code snipptes are **orthogonal** if changing one does not affect the other.
 :::
 :::{grid-item-card} DRY
+Reusable logic should be defined once and once only!
 :::
 :::{grid-item-card} SSOT
+Every piece of information must have a single, unambiguous, authoritative representation within a system."
 :::
 ::::
 
