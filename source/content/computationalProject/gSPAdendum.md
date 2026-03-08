@@ -13,7 +13,7 @@ Almost 10 years after Wilson et al. (2017) an appendix is expedient:
 
 * **Disclosure:** State where AI (e.g., LLMs) was used for artifact (code, logic, text) *generation* and *modification*.
 * **Verification:** Audit all AI-generated artifacts for errors.
-* **Prompts:** Archive prompts used to generate critical artifacts, like code or analysis workflows.
+* **Prompts \& Instructions:** Archive prompts used to generate critical artifacts, like code or analysis workflows.
 :::
 
 :::{grid-item-card} 📦 Software Environment

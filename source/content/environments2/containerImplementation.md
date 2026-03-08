@@ -1,5 +1,5 @@
 (dockerImplementation)=
-#### Docker Implementation
+#### Container Implementation
 
 {% if slide %}
 ::::::{grid} 1 2 2 2
