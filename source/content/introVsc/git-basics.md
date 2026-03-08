@@ -75,18 +75,28 @@ A version of the repository hosted elsewhere (e.g., GitHub, GitLab). Remotes ena
 
 
 {% if slide %}
-[![](https://mermaid.ink/img/pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul?type=png)](https://mermaid.live/edit#pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul)
+::::{grid}
+:gutter: 3
 
+:::{grid-item}
+:column: 6
+:class: sd-m-auto
+[![](https://mermaid.ink/img/pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw?type=png)](https://mermaid.live/edit#pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw)
+:::
+:::{grid-item}
+:column: 6
+:class: sd-m-auto
 * Commits form a **directed acyclic graph** (DAG)
 * Branches are just **labels** pointing to commits
 * History shows **who** changed **what**, **when**, and **why**
-
+:::
+::::
 {% else %}
 
 Git organizes commits into a directed acyclic graph (DAG), where each commit points to its parent(s).
 This structure allows Git to efficiently track the evolution of a project and identify where different development lines diverged or merged.
 
-[![](https://mermaid.ink/img/pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul?type=png)](https://mermaid.live/edit#pako:eNp9Tc1OwzAMfpXJ56pqu7ZpcgWJd5hyMY3XRCNJZRJpUPXdCRPsAAKfvn9vMEdDoGBx6YlxtTocys3Re5d-42fGMNvDmTBlpi_f0nyJOf1Q_1i4pz268H8UKljYGVCJM1XgiUunUNg-fQ3JkicNqkCDfNGgw146K4ZTjP67xjEvFtQZX14Ly6vBRI8OF0Z_V5mCIX6IOSRQ43DbALXBFVTfybpvZHuc5CTk2B0reAPVSlm3g2yEEP0o27ETewXvt69NPYlh_wBq7Wul)
+[![](https://mermaid.ink/img/pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw?type=png)](https://mermaid.live/edit#pako:eNp1Ts1ugzAMfhXkM0KEUkJy7aS9w5SLR1xAXRLkJdM2xLsvVNs0tZpP9vfnb4UhWAIN4xwfGZfJ-CLPEJyb49-9iDjqwsCbqOqqNnCve2b0w1ScCWNi-uYnGi4hxRv0Lv1G7XD2_xYxHkoYebagIycqwRFnQz5h3YUG4kSODOx1LfJlL7tlz4L-KQT3Y-OQxgn0GV9e85UWi5EeZhwZ3S_K5C3xKSQfQQtxuIaAXuEddNuoqq2VOPSql6prMvmRRUpV4qhqKWXbKdE1civh8_q2rnp53L4AJm9zVw)
 
 In this example, commit B is the common ancestor of both branches.
 The `main` branch has progressed through commits C and D, while `feature-branch` has progressed through commits E and F.
