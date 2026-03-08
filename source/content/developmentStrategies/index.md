@@ -8,7 +8,6 @@
 ./rubberDucking
 ./functions
 ./unitTesting
-./refactoring
 ```
 
 {% else %}
@@ -21,9 +20,6 @@
 ```
 
 ```{include} ./unitTesting.md
-```
-
-```{include} ./refactoring.md
 ```
 
 {% endif %}
