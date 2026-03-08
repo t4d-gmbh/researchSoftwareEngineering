@@ -15,20 +15,17 @@ To achieve system-level reproducibility, containerization is utilized. Container
 
 {% if slide %}
 
-::::{grid}
+::::{grid} 1 1 3 3
 :gutter: 2
 
-:::{grid-item-card} User Space Isolation 
+:::{grid-item-card} <i class="fa-solid fa-layer-group"></i> User Space Isolation
 Segregates applications, libraries, and binaries from the host.
 :::
-:::{grid-item-card} Shared Kernel
-Executes directly on the host Operating System kernel.
+:::{grid-item-card} <i class="fa-solid fa-microchip"></i> Shared Kernel
+Runs directly on the host OS kernel — near-native execution speed.
 :::
-:::{grid-item-card} Performance
-Provides near-native execution speed.
-:::
-:::{grid-item-card} Limitation
-Execution is strictly dependent on the host kernel possessing all required modules and features.
+:::{grid-item-card} <i class="fa-solid fa-triangle-exclamation"></i> Kernel Dependency
+Host kernel must provide all required modules and features.
 :::
 ::::
 
@@ -48,22 +45,18 @@ While OS-level virtualization provides near-instant instantiation and minimal ov
 
 {% if slide %}
 
-A container manifest strictly versions and isolates the Python interpreter alongside:
+:::{card}
 
-::::{grid}
-:gutter: 2
+A container manifest versions the **entire user space** alongside the application:
 
-:::{grid-item}
 * Base **operating system** (e.g., Ubuntu, Alpine Linux)
-* Core **system libraries**
-:::
-:::{grid-item}
-* **Compiler toolchains**
-* other **software tools needed**
-:::
-::::
+* Core **system libraries** and **compiler toolchains**
+* All other **software tools** the application requires
 
-*The execution context is entirely separated from the host's global variables, configuration files, and installed binaries.*
+{.centered}
+*Fully isolated from the host's global state, configuration, and binaries.*
+
+:::
 
 {% else %}
 As previously established, a Python `.venv` isolates only Python-domain packages. It inherently relies on the host operating system to provide underlying C libraries, network protocols, and hardware drivers.
@@ -75,46 +68,37 @@ Containers encompass the entire system user space. A container manifest declares
 
 {% if slide %}
 
-::::::{grid} 2
-:gutter: 2
+Containers are instantiated from **images**, built from declarative manifests.
 
-:::::{grid-item-card} 📜 The Blueprint
-:columns: 4
+::::{tab-set}
 
-A container is instantiated from an image, compiled from a declarative manifest (e.g., `Dockerfile` or `Apptainer.def`). This dictates the exact system state.
-:::::
+:::{tab-item} 🦭 Podman (Dockerfile)
 
-:::::{grid-item-card} ⚡ Active Execution
-Manifests actively instruct the runtime on **how to execute the payload** using directives like `ENTRYPOINT` or `%runscript`.
-
-::::{grid} 1 1 1 2
-:gutter: 2
-
-:::{grid-item-card} 🦭 Podman (Dockerfile)
-Execution is bound using the `ENTRYPOINT` directive:
+Execution binding via `ENTRYPOINT`:
 
 ```dockerfile
 ENTRYPOINT ["python", "/opt/pipeline/main.py"]
-
 ```
 
 :::
 
-:::{grid-item-card} 👽 Apptainer
-Execution is bound using the `%runscript` block:
+:::{tab-item} 👽 Apptainer (.def)
+
+Execution binding via `%runscript`:
 
 ```apptainer
 %runscript
     exec python /opt/pipeline/main.py "$@"
-
 ```
 
 :::
+
 ::::
 
-:::::
-::::::
-
+:::{admonition} Key Insight
+:class: tip
+Manifests turn containers into self-contained executables — arguments pass directly to the internal logic.
+:::
 
 {% else %}
 A container is instantiated from an image, which is compiled from a declarative manifest (e.g., a `Dockerfile` for Podman/Docker, or an `Apptainer.def` file). This manifest serves as the exact blueprint of the system state.
