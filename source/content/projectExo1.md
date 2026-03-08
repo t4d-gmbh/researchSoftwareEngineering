@@ -7,7 +7,7 @@
 
 ```{epigraph}
 {.centered}
-*Recall*
+*Recall:*
 ```
 
 ::::{grid} 2 2 4 4
