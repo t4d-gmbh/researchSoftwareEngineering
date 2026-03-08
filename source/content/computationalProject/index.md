@@ -11,9 +11,9 @@
 ./gSPAdendum
 ./structure
 ./pillarsSoC.md
-./limitations.md
 ./projectScaffolding
 ./projectTemplate
+./limitations.md
 ```
 
 {% else %}
@@ -29,11 +29,11 @@
 ```
 ```{include} ./pillarsSoC.md
 ```
-```{include} ./limitations.md
-```
 ```{include} ./projectScaffolding.md
 ```
 ```{include} ./projectTemplate.md
+```
+```{include} ./limitations.md
 ```
 
 {.smaller}
