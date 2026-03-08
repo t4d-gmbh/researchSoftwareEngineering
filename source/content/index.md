@@ -16,8 +16,7 @@
 ./refactoring/index
 ./onPython/index
 ./primerParallelism/index
-./projectExo3.md
-{% if build == "slides" %}./projectExo3.md/index{% endif %}
+{% if build == "slides" %}./projectExo3.md{% endif %}
 ./environments2/index
-{% if build == "slides" %}./projectHW.md/index{% endif %}
+{% if build == "slides" %}./projectHW.md{% endif %}
 ```
