@@ -34,10 +34,11 @@ Incremented when **new features** or **functionality** are added in a backwards-
 Incremented when backwards-compatible **bug fixes** or **minor updates** are introduced.
 :::
 ::::
-
+{% if page %}
 Defining a new version of a repository is straightforward when utilizing `git tag`:
 
 ```bash
 git tag -a X.Y.Z -m 'short description of state'
 
 ```
+{% endif %}
