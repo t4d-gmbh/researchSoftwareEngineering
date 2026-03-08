@@ -3,82 +3,92 @@
 
 ### Typical Development Cycle
 
-{% if page %}
-::::{grid} 1 2 2 2
+
+::::{admonition} Best Practice
+:class: tip margin
+Clear commit messages are essential for reference and orientation.
+
+:::{image} https://imgs.xkcd.com/comics/git_commit.png
+:alt: Git Commit
+:align: center
+:width: 100%
+:class: sd-m-auto
+
+{.smaller}
+*Source*: [xkcd.com/1296](https://xkcd.com/1296)
+:::
+::::
+
+
+::::::{grid} 1 2 2 2
 :gutter: 2
 
-:::{grid-item}
+:::::{grid-item}
+:columns: {% if slide %}5{% else %}6{% endif %}
 :class: sd-m-auto
+{% if page %}
 
 First, code is fetched from a remote repository to a local machine utilizing `git clone` (for initial setup) or `git pull` (for updates).
 Modifications are then made within the local working directory and staged via `git add`.
 Subsequently, these modifications are permanently recorded to the local repository's history through `git commit`.
 Finally, the updated local history is uploaded back to the remote repository utilizing `git push`.
 
-:::
-:::{grid-item}
-:class: sd-m-auto
 
-{% endif %}
+{% else %}
 
-{% if slide %}
-::::{grid} 1 2 2 2
+::::{tab-set}
 :gutter: 2
 
-:::{grid-item}
-:class: sd-m-auto
-{% endif %}
+:::{tab-item} Setup & Clone
 
-```text
-┌──────────┐
-│  Remote  │
-│Repository│
-└────┬─────┘
-     │ git clone / git pull
-     ▼
-┌──────────┐
-│   Local  │  git add
-│Repository│ ◄───────  Working Directory
-└────┬─────┘
-     │ git commit
-     │
-     ▼ git push
-┌──────────┐
-│  Remote  │
-│Repository│
-└──────────┘
+```bash
+# Configure author identity
+git config --global user.name "Author Name"
+git config --global user.email "author@example.com"
+
+# Get a repository
+git clone <url>
 ```
-
-{% if slide %}
 :::
-:::{grid-item}
-:class: sd-m-auto
+:::{tab-item} Daily Work
 
-:::{grid-item}
-:class: sd-m-auto
-{% else %}
+```bash
+# Check repository status
+git status
+
+# Stage changes
+git add <file>
+
+# Commit changes
+git commit -m "Descriptive message"
+```
 :::
+
+:::{tab-item} Sync
+
+```bash
+# Get latest changes
+git pull
+
+# Send changes to remote
+git push
+```
+:::
+::::
 {% endif %}
-
-:::{admonition} Best Practice
-:class: tip {% if page %}margin{% endif %}
-Clear commit messages are essential for reference and orientation.
-
-:::{image} https://imgs.xkcd.com/comics/git_commit.png
-:alt: Git Commit
-:align: center
-:width: {% if page %}100%{% else %}60%{% endif %}
+:::::
+:::::{grid-item}
+:columns: {% if slide %}7{% else %}6{% endif %}
 :class: sd-m-auto
-
-{.smaller}
-*Source*: [xkcd.com/1296](https://xkcd.com/1296)
-:::
+```{image} ./../_static/gitWorkflow.png
+:alt: Git Workflow
+:width: 100%
+```
+:::::
+::::::
 
 
 {% if page %}
-
-:::
-::::
 
 The basic Git workflow involves moving changes through different stages, from a local working directory to a remote repository where they can be accessed by others.
 
@@ -94,86 +104,49 @@ Git operates using three main states for files:
    The committed history safely stored in the `.git` directory.
 
 This three-stage model provides fine-grained control over what is recorded in the project history.
-{% endif %}
 
 ### Essential Commands
 
-{% if slide %}
-::::{tab-set}
-:gutter: 2
-
-:::{tab-item} Setup & Clone
-{% else %}
 **Initial setup** (one-time configuration):
-{% endif %}
 
 ```bash
 # Configure author identity
 git config --global user.name "Author Name"
 git config --global user.email "author@example.com"
 
-{% if slide %}# Get a repository
-git clone <url>
-{% else %}# Clone an existing repository
+# Clone an existing repository
 git clone https://github.com/username/repository.git
-{% endif %}
 ```
 
-{% if slide %}
-:::
-
-:::{tab-item} Daily Work
-{% else %}
 **Daily workflow**:
-{% endif %}
 
 ```bash
 # Check repository status
 git status
 
-{% if slide %}# Stage changes
-git add <file>{% else %}# Stage specific files
-git add analysis.py figures/plot.png{% endif %}
+# Stage specific files
+git add analysis.py figures/plot.png
 
 # Stage all changes
 git add .
-{% if slide %}
-# Commit changes
-git commit -m "Descriptive message"
-{% else %}
 # Create a commit
 git commit -m "Add correlation analysis and visualization"
 
 # View commit history
 git log --oneline
-{% endif %}
 
 ```
 
-{% if slide %}
-:::
-
-:::{tab-item} Sync with Remote
-{% else %}
 **Synchronizing with remotes**:
-{% endif %}
 
 ```bash
-{% if slide %}# Get latest changes{% else %}# Fetch and merge changes from remote{% endif %}
+# Fetch and merge changes from remote
 git pull
 
 # Send changes to remote
 git push
 
 ```
-
-{% if slide %}
-:::
-::::
-{% endif %}
-
-
-{% if page %}
 ### Working with Branches
 
 Branches allow features to be developed in isolation:
@@ -191,12 +164,22 @@ git checkout main
 git merge feature-analysis
 
 ```
-
-{% endif %}
-
-
-{% if page %}
 ### Commit Message Best Practices
+
+::::{admonition} Best Practice
+:class: tip margin
+Clear commit messages are essential for reference and orientation.
+
+:::{image} https://imgs.xkcd.com/comics/git_commit.png
+:alt: Git Commit
+:align: center
+:width: 100%
+:class: sd-m-auto
+
+{.smaller}
+*Source*: [xkcd.com/1296](https://xkcd.com/1296)
+:::
+::::
 
 Good commit messages are essential for maintaining a usable project history[^1]([xkcd.com/1296](https://xkcd.com/1296)):
 
@@ -215,5 +198,4 @@ normalization to ensure consistent input ranges for downstream analysis.
 Fixes issue #42."
 
 ```
-
 {% endif %}
