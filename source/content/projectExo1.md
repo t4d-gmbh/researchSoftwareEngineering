@@ -28,4 +28,4 @@ What is raw, what is interim, what is a result?
 ::::
 
 {.centered}
-Head over to the [HelloWorld](https://github.com/pSciComp/exoHelloWorld) repository and have a look at [`Project - Exo 1`](https://github.com/pSciComp/exoHelloWorld/blob/main/exercises/project/Exo_1.md).
+Head over to the [HelloWorld](https://github.com/pSciComp/exoHelloWorld) repository and have a look at [`Project - Exo 1`](https://github.com/pSciComp/exoHelloWorld/blob/main/exercises/structure/Exo_1.md).
