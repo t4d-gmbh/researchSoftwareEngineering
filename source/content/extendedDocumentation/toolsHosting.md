@@ -1,10 +1,5 @@
 ## Documentation Tools and Hosting
 
-:::{admonition} Python Project Template
-:class: tip margin
-- [Extended Docs](https://j-i-l.github.io/pythonProject/index.html)  
-- [Source](https://github.com/j-i-l/pythonProject/tree/main/docs)
-:::
 {% if slide %}
 
 **Static Site Generators**

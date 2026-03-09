@@ -26,5 +26,5 @@ Every piece of information must have a single, unambiguous, authoritative repres
 ::::
 
 {.centered}
-Head over to the [LLM Training](https://github.com/pSciComp/exoLLMtraining) repository and have a look at [`Project - Exo 2`](https://github.com/pSciComp/exoLLMtrain/blob/main/exercises/project/Exo_1.md).
+Head over to the [LLM Training](https://github.com/pSciComp/exoLLMTraining) repository and have a look at [`Project - Exo 2`](https://github.com/pSciComp/exoLLMTraining/blob/main/exercises/structure/Exo_1.md).
 

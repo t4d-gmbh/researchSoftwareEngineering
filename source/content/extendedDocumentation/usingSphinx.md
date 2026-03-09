@@ -1,5 +1,11 @@
 ## Building Documentation with Sphinx
 
+:::{admonition} Python Project Template
+:class: tip margin
+- [Extended Docs](https://j-i-l.github.io/pythonProject/index.html)  
+- [Source](https://github.com/j-i-l/pythonProject/tree/main/docs)
+:::
+
 {% if slide %}
 
 ::::{grid} 1 2 2 2
