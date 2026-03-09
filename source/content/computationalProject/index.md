@@ -10,7 +10,8 @@
 ./goodScientificPractice
 ./gSPAdendum
 ./structure
-./pillarsSoC.md
+./pillarsSoC
+./pillarFigure.md
 ./projectScaffolding
 ./projectTemplate
 ./limitations.md
@@ -28,6 +29,8 @@
 ```{include} ./structure.md
 ```
 ```{include} ./pillarsSoC.md
+```
+```{include} ./pillarFigure.md
 ```
 ```{include} ./projectScaffolding.md
 ```

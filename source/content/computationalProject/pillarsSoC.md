@@ -1,23 +1,11 @@
 (pillarsSoC)=
 # 4 Pillars of SoC
 
+{% if page %}
 :::{admonition} The Four Pillars of SoC
 :class: tip, margin
-{% if slide %}
-Environment. Configuration. Code. Data.
-{% else %}
 True computational reproducibility mandates the rigid Separation of Concerns (SoC) across four distinct, isolated pillars. Failure to isolate these concerns leads to security vulnerabilities (credentials in Git), rigid codebases, non-reproducible environments, and data integrity failures.
-{% endif %}
 :::
-{% if slide %}
-
-```{compound}
-{.centered}
-An optimized strategy for managing the interaction of Environment, Configuration, Code, and Data.
-
-```
-
-{% else %}
 
 Effective data handling is critical for computational efficiency, reproducibility, and scientific integrity. Within a modern computational project, data must not be treated as an ephemeral byproduct but as a first-class citizen governed by a deliberate strategy.
 
@@ -32,11 +20,23 @@ This strategy hinges on the strict application of the **Separation of Concerns (
 
 {% endif %}
 
+```{compound}
+{.centered}
+**The "conductor"**
+
+{.centered}
+Execution scripts (under `scripts/`) act as minimal orchestration layer that combines the required elements from the 4 pillars:
+```
+
 ::::{grid} 1 1 2 2
 :gutter: 2
 
-:::{grid-item-card} Pillar 1: Environment
+:::{grid-item-card} Environment
 :class: sd-m-auto
+
+Pillar 1
+
+^^^
 
 {% if page %}
 Defines the software stack, underlying OS context, and dynamic runtime information.
@@ -56,8 +56,12 @@ Defines the software stack, underlying OS context, and dynamic runtime informati
 {% endif %}
 
 :::
-:::{grid-item-card} Pillar 2: Configuration
+:::{grid-item-card} Configuration
 :class: sd-m-auto
+
+Pillar 2
+
+^^^
 
 {.smaller}
 The `config/` folder
@@ -71,25 +75,31 @@ Defines the static parameters required by the algorithmic logic.
 {% endif %}
 
 :::
-:::{grid-item-card} Pillar 3: Code
+:::{grid-item-card} Code
 :class: sd-m-auto
 
+Pillar 3
+
+^^^
+
+{.smaller}
+The `src/` folder
+
 {% if page %}
-The algorithmic logic, rigidly separated into reusable building blocks and execution coordination.
+The algorithmic logic, rigidly separated into (re)usable building blocks.
 {% endif %}
 
-* **Reusable Logic (`/src`)**: Clean, library-like algorithmic code.
+* **Code**: Clean, library-like algorithmic code.
 {% if page %}
   * **Independent on** Pillar 1 (Environment variables) or Pillar 2 (Configuration loading logic).
 {% endif %}
-* **Execution Scripts (`/scripts`)**: The "conductor."
-{% if page %}
-  These scripts are the *only* intersection point where all pillars combine: they read dynamic context (Pillar 1), load static parameters (Pillar 2), import reusable logic from `/src` (Pillar 3), and act upon data declared in `/data` (Pillar 4).
-{% endif %}
-
 :::
-:::{grid-item-card} Pillar 4: Data
+:::{grid-item-card} Data
 :class: sd-m-auto
+
+Pillar 4
+
+^^^
 
 {.smaller}
 The `data/` folder
