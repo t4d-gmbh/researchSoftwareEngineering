@@ -115,12 +115,6 @@ The course includes practical exercises with real repositories, providing hands-
 
 {% if slide %}
 
-### Next Steps
-
-1. **Practice**: Git can be utilized for upcoming analyses or projects.
-2. **Explore**: Remote hosting platforms like GitHub or GitLab can be tested.
-3. **Learn more**: The full course can be attended when appropriate.
-
 :::{admonition} Remember
 :class: tip
 Version control is a skill that improves with practice. Starting small and gradually building up is recommended.

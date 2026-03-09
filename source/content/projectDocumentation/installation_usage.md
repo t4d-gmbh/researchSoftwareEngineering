@@ -21,11 +21,46 @@ The Golden Rule:
 - Minimize custom installation steps
 - Document environment setup explicitly
 
-::::::{grid}
-:gutter: 2
+::::{tab-set}
+:::{tab-item} Installation
+**Example**: Python-based project using `uv`.
 
-:::::{grid-item-card}
-:columns: 12
+```bash
+git clone https://github.com/<owner>/<repo-name>.git
+cd repo-name
+uv sync
+```
+
+**Key points:**
+- `uv sync` uses the Python version from `pyproject.toml`
+- Creates isolated `.venv` automatically
+- Installs all dependencies and project in editable mode
+:::
+:::{tab-item} Usage
+Minimal, copy-pasteable example:
+
+```bash
+uv run python scripts/drafts/hello.py
+```
+
+```python
+import numpy as np
+from mypkgs.math import multiply_matrices
+
+a = np.array([[1,2],[3,4]])
+b = np.array([[4,3],[2,1]])
+multiply_matrices(a,b)
+```
+:::
+:::{tab-item} Methodology
+Keep the technical overview high-level:
+
+- List core algorithms and computational workflows
+- Example: *"Uses CNN and Runge-Kutta integration"*
+
+Details belong in extended documentation.
+:::
+::::
 
 {% else %}
 
@@ -36,44 +71,7 @@ For Python projects, this means adhering to official packaging standards.
 The `pyproject.toml` file is the [modern standard for Python project configuration](https://peps.python.org/pep-0621/).
 Combined with a project manager like `uv`, installation reduces to a single, universal command.
 
-{% endif %}
-
 ### Installation
-
-{% if slide %}
-**Example**: Python-based project using `uv`.
-
-::::{grid}
-:gutter: 2
-
-:::{grid-item}
-:class: sd-m-auto
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/<owner>/<repo-name>.git
-   cd repo-name
-   ```
-2. Install python version, create environment and install project:
-   ```bash
-   uv sync
-   ```
-:::
-:::{grid-item-card} Key points:
-:class: sd-m-auto
-
-* `uv sync` directly uses the Python version declared in the `pyproject.toml`
-* `uv sync` automatically creates an isolated `.venv`
-* It reads `pyproject.toml` to install all dependencies
-* The project is installed in editable mode by default
-:::
-::::
-
-:::::
-:::::{grid-item-card}
-:columns: 6
-
-{% else %}
 
 For Python projects following modern packaging standards, we recommend using [`uv`](https://docs.astral.sh/uv/), a fast Python package and project manager written in Rust.
 
@@ -111,31 +109,7 @@ This pattern works identically on Windows, macOS, and Linux.
 Users don't need to understand your project's internals, manually create virtual environments, or worry about pip versions — they just use standard `uv` commands regardless of complexity.
 :::
 
-{% endif %}
-
 ### Usage
-
-{% if slide %}
-Provide a **minimal, copy-pasteable example**:
-
-```bash
-uv run python scripts/drafts/hello.py
-```
-```python
-import numpy as np
-from mypkgs.math import multiply_matrices
-
-a = np.array([[1,2],[3,4]])
-b = np.array([[4,3],[2,1]])
-multiply_matrices(a,b)
-# Out[5]: array([[8, 5], [20, 13]])
-```
-
-:::::
-:::::{grid-item-card}
-:columns: 6
-
-{% else %}
 
 Provide a copy-pasteable use case with expected output.
 
@@ -181,26 +155,7 @@ To keep the `README.md` concise, advanced scenarios should not be detailed direc
 Instead, refer to the extended documentation (e.g., under the `docs/` folder) or provide direct links to advanced scripts.
 :::
 
-{% endif %}
-
 ### Methodology
-
-{% if slide %}
-
-**Keep the technical overview high-level:**
-
-- List the core algorithms, mathematical models, or computational workflows.
-- Example: *"Uses a Convolutional Neural Network and Runge-Kutta integration."*
-
-:::{admonition} Details in Docs
-:class: note
-All deep architectural or mathematical explanations belong in the extended documentation.
-:::
-
-:::::
-::::::
-
-{% else %}
 
 The methodology section should provide a high-level overview of the scientific or computational approach taken in your project. Simply list the core algorithms, mathematical models, or computational workflows utilized (for example, *"Uses a Convolutional Neural Network for image feature extraction and Runge-Kutta integration for system dynamics"*).
 

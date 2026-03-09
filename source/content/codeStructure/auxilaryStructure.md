@@ -10,14 +10,14 @@ Auxiliary tasks should be structurally isolated into independent locations.
 ::::{grid} 2
 :gutter: 2
 
-:::{grid-item-card} ✅ Validation Target (`src/`)
-- The `tests/` directory is dedicated **exclusively** to verifying reusable logic.
-- Tests import pure functions from `src/` to assert expected outputs based on controlled inputs.
+:::{grid-item-card} ✅ Validation Target (`src/<mypackage>`)
+- The `tests/` directory is there to verifying installable code.
+- Tests import and validate functions from `mypackage`.
 :::
 
 :::{grid-item-card} 🚫 Strict Ignorance
-- Tests **must ignore** `scripts/` and `notebooks/`.
-- Execution endpoints are inherently stateful and lack modularity.
+- Tests ignore `scripts/` and `notebooks/`.
+- Execution endpoints are stateful and lack modularity.
 - Complex logic must be extracted to `src/` before it can be reliably tested.
 :::
 ::::
@@ -28,8 +28,7 @@ According to the principle of Separation of Concerns, these auxiliary tasks must
 
 ### Testing Isolation and Scope
 
-
-The `tests/` directory is dedicated exclusively to verifying the reusable logic contained within the `src/` package.
+The `tests/` directory is dedicated to verifying the installable codebase (i.e. in `src/`).
 A testing framework (such as `pytest`) operates by importing the pure functions and classes from `src/` and asserting that they produce the expected outputs given controlled inputs.
 
 Crucially, **the testing framework must strictly ignore the `scripts/` and `notebooks/` directories**.
@@ -47,8 +46,8 @@ Once in `src/`, it can be safely imported by the test suite for validation, and 
 {% if slide %}
 
 **Consolidated Dependency Management**
-Modern Python projects utilize the central `pyproject.toml` to declare isolated dependencies for auxiliary tasks via **optional dependencies** or **dependency groups**, enforcing Separation of Concerns without scattering configuration files.
 
+Use the `pyproject.toml` to **declare isolated dependencies** for testing and further auxiliary tasks.
 
 
 ::::{grid} 2

@@ -14,33 +14,35 @@
 
 ---
 
-### Descriptive Names
+::::::::{tab-set}
+
+:::::::{tab-item} Descriptive Names
 
 Bad naming forces the reader to memorize arbitrary labels.
 
-::::{grid} 2
-:::{grid-item-card} Don't
+::::::{grid} 2
+:::::{grid-item-card} Don't
 ```python
 def proc(d, t):
     return d / t
 ```
-:::
-:::{grid-item-card} Do
+:::::
+:::::{grid-item-card} Do
 ```python
 def compute_speed(distance, time):
     return distance / time
 ```
-:::
-::::
+:::::
+::::::
 
 :::{admonition} Rule of thumb
-:class: tip margin
+:class: tip
 If you need a comment to explain what a variable *is*, rename it instead.
 :::
 
----
+:::::::
 
-### Comments: When and Why
+:::::::{tab-item} Comments: When and Why
 
 | Use comments to... | Avoid comments that... |
 |---|---|
@@ -48,18 +50,22 @@ If you need a comment to explain what a variable *is*, rename it instead.
 | Summarize complex logic at a high level | Substitute for clear naming |
 | Provide usage examples | Excuse unreadable code |
 
----
+:::::::
+
+:::::::{tab-item} Consistency Over Cleverness
 
 :::{admonition} Remember
-:class: important margin
+:class: important
 Code is read far more often than it is written.
 :::
-
-### Consistency Over Cleverness
 
 - Stick to one style: indentation, naming, file structure
 - Consistency reduces cognitive load
 - Readability always beats brevity
+
+:::::::
+
+::::::::
 
 {% else %}
 
