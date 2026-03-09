@@ -9,7 +9,9 @@
 
 1. **Create a HelloWorld Apptainer container**  
 
-   Head over to the [HelloWorld](https://github.com/pSciComp/exoHelloWorld) repository and have a look at [`Project - Exo 2`](https://github.com/pSciComp/exoHelloWorld/blob/main/exercises/project/Exo_2.md).
+   Head over to the [HelloWorld](https://github.com/pSciComp/exoHelloWorld) repository and have a look at [`Structure - Exo 2`](https://github.com/pSciComp/exoHelloWorld/blob/main/exercises/structure/Exo_2.md).
+
+   _Optional_: Try to build a container via CI/CD pipeline for our HelloWorld project: [`Structure - Exo 3`](https://github.com/pSciComp/exoHelloWorld/blob/main/exercises/structure/Exo_3.md).
 1. **Login to Science Cloud** by following S3IT's [docs](https://docs.s3it.uzh.ch/cloud2/overview/).
 2. **Login to Science Cluster via SSH** by following S3IT's [docs](https://docs.s3it.uzh.ch/cluster/overview/).
 
