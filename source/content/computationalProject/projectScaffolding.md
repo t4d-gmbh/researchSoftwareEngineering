@@ -33,6 +33,7 @@ We suggest adopting the following structure for the root folder, commonly referr
 <input type="radio" name="tree-nav" id="radio-license" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-citation" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-contrib" class="tree-radio">
+<input type="radio" name="tree-nav" id="radio-containers" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-codeofconduct" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-data" class="tree-radio">
 <input type="radio" name="tree-nav" id="radio-data-readme" class="tree-radio">
@@ -100,6 +101,7 @@ We suggest adopting the following structure for the root folder, commonly referr
             </ul>
           </details>
         </li>
+        <li>📂 <label for="radio-containers">containers/</label></li>
         <li>📂 <label for="radio-config">config/</label></li>
         <li>
           <details>
@@ -275,6 +277,10 @@ doi: <the-doi>
       <span class="context-label">🔸 Python/R</span>
       <h3>📁 drafts/</h3>
       <p>A scratchpad folder for experimental notebooks that are not yet production-ready or integrated into the main workflow.</p>
+    </div>
+    <div id="desc-containers" class="desc-item">
+      <h3> 📦 Containers</h3>
+      <p>Centralized location for all container definitions. Your <code>*.def</code> and <code>Dockerfile</code> files are here.</p>
     </div>
     <div id="desc-config" class="desc-item">
       <h3>⚙️ Configuration</h3>
