@@ -17,6 +17,8 @@
 
 ```{include} ./containerEnv.md
 ```
+```{include} ./apptainerRuntime.md
+```
 ```{include} ./layeringFilesystems.md
 ```
 ```{include} ./toolingSecurityDistribution.md
