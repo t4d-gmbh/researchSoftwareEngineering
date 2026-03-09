@@ -50,6 +50,7 @@ from mypkgs.math import multiply_matrices
 a = np.array([[1,2],[3,4]])
 b = np.array([[4,3],[2,1]])
 multiply_matrices(a,b)
+# Out[5]: array([[8, 5], [20, 13]])
 ```
 :::
 :::{tab-item} Methodology
