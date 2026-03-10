@@ -47,7 +47,11 @@ extensions = [
     "sphinx_design",
     "sphinx_togglebutton",
     "sphinx_tabs.tabs",
+    "sphinxcontrib.mermaid"
 ]
+
+mermaid_height = "50%"
+mermaid_width = "100%"
 
 templates_path = ['_templates']
 exclude_patterns = []
