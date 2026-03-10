@@ -9,6 +9,7 @@
 ./codingPractices
 ./orthogonality
 ./dry
+./ssot
 ```
 
 {% else %}
@@ -20,6 +21,8 @@
 ```{include} ./orthogonality.md
 ```
 ```{include} ./dry.md
+```
+```{include} ./ssot.md
 ```
 
 {.smaller}

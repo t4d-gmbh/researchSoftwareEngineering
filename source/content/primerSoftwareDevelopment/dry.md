@@ -11,7 +11,7 @@ sd_hide_title: true
 **Don't Repeat Yourself**
 
 {.centered}
-"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system."
+"Every piece of logic should have a single, unambiguous, authoritative representation within a system."
 ```
 
 
