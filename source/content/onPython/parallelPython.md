@@ -54,20 +54,11 @@ for _ in range(100):
 :columns: 6
 :class: sd-m-auto
 
-{% if slide %}
-
 ```{compound}
 {.centered}
 ⚠️ **The Oversubscription Risk:**  
-Naively parallelizing a Python loop over operations that are already internally parallelized leads to severe thread contention and drastic performance degradation.*
+Naively parallelizing a Python loop over operations that are already internally parallelized leads to severe thread contention and drastic performance degradation.
 ```
-{% else %}
-
-Its prevalence is not due to methodologies being implemented in pure Python, but rather because Python provides a comprehensive portfolio of interfaces to highly effective implementations.
-
-Libraries such as `pandas` (built upon `numpy`), `scipy`, `scikit-learn`, `pytorch`, and `tensorflow` act as abstraction layers, providing a Python interface to highly optimized `C`, `C++`, or `Fortran` libraries.
-
-{% endif %}
 :::
 ::::
 
