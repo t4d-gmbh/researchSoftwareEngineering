@@ -15,6 +15,12 @@
 ⚠️ Python GIL limitation
 
 *Tightly coupled tasks*
+```{mermaid}
+graph LR
+    T1[T1] -.shared.-> M[Mem]
+    T2[T2] -.shared.-> M
+```
+
 ::::
 
 ::::{grid-item-card} ⚙️ Multi-Processing
@@ -26,23 +32,16 @@
 ⚠️ Higher memory use
 
 *Embarrassingly parallel*
+
+```{mermaid}
+graph LR
+    P1[P1] -->|IPC| P2[P2]
+```
 ::::
 
 :::::
 
 ### Communication Trade-off
-
-```{mermaid}
-graph LR
-    subgraph "Multi-Threading"
-    T1[Thread 1] -.shared.-> M[Memory]
-    T2[Thread 2] -.shared.-> M
-    end
-    
-    subgraph "Multi-Processing"
-    P1[Process 1] -->|IPC| P2[Process 2]
-    end
-```
 
 ```{tip}
 **Litmus test**: "Do the same thing to 1000 inputs independently" → Multi-processing
